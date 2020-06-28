@@ -1,0 +1,40 @@
+<div ng-controller="newPicMeController as npmCtrl">
+	<div class="actions-top bgTransparent">
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--6-col mdl-cell--2-col-phone mdl-cell--4-col-tablet text-left">
+				<a class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" href="#!/picMe/listPicMe">
+				  <i class="material-icons md-light">arrow_back</i>
+				</a>
+			</div>
+			<div class="mdl-cell mdl-cell--6-col mdl-cell--2-col-phone mdl-cell--4-col-tablet text-right">
+				<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" ng-click="">
+				  <i class="material-icons md-light">hd</i>
+				</button>
+			</div>
+		</div>
+    </div>
+    <div class="mdl-grid content-center">
+		<video id="picMeCam" class="fullscreen" autoplay>Video stream not available.</video>
+		<canvas id="picMeCanvas" class="hidden"></canvas>
+		<img id="picMeImage" class="fullscreen hidden"></img>
+	</div>
+	<div class="actions-bottom bgTransparent">
+		<div class="mdl-grid content-center">
+			<div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone mdl-cell--2-col-tablet text-left">
+				<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored md-68" ng-click="npmCtrl.getFilters()">
+				  <i class="material-icons md-light md-48">photo_filter</i>
+				</button>
+			</div>
+		  	<div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone mdl-cell--2-col-tablet text-center">
+				<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored md-68" ng-click="npmCtrl.savePicMe()">
+				  <i class="material-icons md-light md-48">camera</i>
+				</button>
+		  	</div>
+			  <div class="mdl-cell mdl-cell--4-col mdl-cell--1-col-phone mdl-cell--2-col-tablet text-right">
+					<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored md-68" ng-click="npmCtrl.switchCam()">
+					  <i class="material-icons md-light md-48">{{ npmCtrl.front == true ? 'camera_front' : 'camera_rear' }}</i>
+					</button>
+			  </div>
+		</div>
+    </div>
+</div>

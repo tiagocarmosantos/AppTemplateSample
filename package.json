@@ -1,0 +1,59 @@
+{
+  "name": "ngProgressive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "8.11.1",
+    "npm": "4.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp",
+    "production": "gulp --production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tensorflow-models/mobilenet": "0.2.2",
+    "@tensorflow/tfjs": "^0.12.0",
+    "angular": "1.6.1",
+    "angular-animate": "1.6.1",
+    "angular-aria": "1.6.1",
+    "angular-locale-pt-br": "1.3.16",
+    "angular-messages": "1.6.1",
+    "angular-route": "1.6.1",
+    "angular-sanitize": "1.6.1",
+    "angular-toastr": "2.1.1",
+    "bootstrap": "3.3.7",
+    "client-compress": "^2.1.2",
+    "compress.js": "^1.1.2",
+    "font-awesome": "^4.7.0",
+    "footable": "2.0.6",
+    "http-server": "0.10.0",
+    "jquery": "3.2.1",
+    "material-design-icons": "^3.0.1",
+    "material-design-lite": "1.3.0",
+    "requirejs": "2.3.6",
+    "run-sequence": "2.0.0",
+    "w3-css": "4.1.0",
+    "qrcode": "1.4.4"
+  },
+  "devDependencies": {
+    "heroku": "^7.0.17",
+    "babel-core": "6.26.0",
+    "babel-preset-env": "1.6.0",
+    "gulp": "3.9.1",
+    "gulp-babel": "7.0.0",
+    "gulp-concat": "2.6.1",
+    "gulp-htmlmin": "3.0.0",
+    "gulp-rename": "1.2.2",
+    "gulp-uglify": "3.0.0",
+    "gulp-uglifycss": "1.0.8",
+    "gulp-util": "3.0.8",
+    "gulp-watch": "4.3.11",
+    "gulp-webserver": "0.9.1",
+    "json-server": "0.12.2"
+  }
+}

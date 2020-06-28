@@ -1,0 +1,123 @@
+{
+  "contatos": [
+    {
+      "id": 1,
+      "nome": "Jean",
+      "telefone": "98621-4487",
+      "data": "2017-02-11T02:15:12.356Z",
+      "operadora": {
+        "nome": "Oi",
+        "codigo": 14,
+        "categoria": "Celular",
+        "preco": 2
+      },
+      "cor": "blue",
+      "selecionado": false,
+      "visualizavel": true,
+      "editavel": true,
+      "deletavel": true
+    },
+    {
+      "id": 2,
+      "nome": "Tiago",
+      "telefone": "98621-4488",
+      "data": "2017-02-11T02:15:12.356Z",
+      "operadora": {
+        "nome": "Vivo",
+        "codigo": 15,
+        "categoria": "Celular",
+        "preco": 1
+      },
+      "cor": "orange",
+      "selecionado": false,
+      "visualizavel": true,
+      "editavel": false,
+      "deletavel": true
+    },
+    {
+      "telefone": "98621-4485",
+      "data": "2017-03-20T01:47:37.689Z",
+      "operadora": {
+        "id": 4,
+        "nome": "GVT",
+        "codigo": 21,
+        "categoria": "Fixo",
+        "preco": 2
+      },
+      "nome": "LEONARDO CAMPOS",
+      "cor": "green",
+      "selecionado": false,
+      "serial": "3'\"",
+      "id": 3
+    },
+    {
+      "nome": "LUCIANO JATOBA",
+      "telefone": "98621-4486",
+      "data": "2017-03-20T02:08:18.287Z",
+      "operadora": {
+        "id": 4,
+        "nome": "GVT",
+        "codigo": 21,
+        "categoria": "Fixo",
+        "preco": 2
+      },
+      "cor": "red",
+      "selecionado": false,
+      "serial": "U,A",
+      "id": 4
+    },
+    {
+      "nome": "JOSEANE SAND",
+      "telefone": "98621-4482",
+      "data": "2017-03-20T02:09:10.320Z",
+      "operadora": {
+        "id": 3,
+        "nome": "Tim",
+        "codigo": 45,
+        "categoria": "Celular",
+        "preco": 3
+      },
+      "cor": "yellow",
+      "selecionado": false,
+      "serial": "+Z ",
+      "id": 5
+    }
+  ],
+  "operadoras": [
+    {
+      "id": 1,
+      "nome": "Oi",
+      "codigo": 14,
+      "categoria": "Celular",
+      "preco": 2
+    },
+    {
+      "id": 2,
+      "nome": "Vivo",
+      "codigo": 15,
+      "categoria": "Celular",
+      "preco": 1
+    },
+    {
+      "id": 3,
+      "nome": "Tim",
+      "codigo": 45,
+      "categoria": "Celular",
+      "preco": 3
+    },
+    {
+      "id": 4,
+      "nome": "GVT",
+      "codigo": 21,
+      "categoria": "Fixo",
+      "preco": 2
+    },
+    {
+      "id": 5,
+      "nome": "Embratel",
+      "codigo": 23,
+      "categoria": "Fixo",
+      "preco": 1
+    }
+  ]
+}

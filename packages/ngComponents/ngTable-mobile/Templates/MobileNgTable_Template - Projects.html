@@ -1,0 +1,41 @@
+﻿<table data-role="table" data-mode="columntoggle" class="{{class}}">
+    <thead>
+        <tr>
+            <th ng-show=commandColumnSelect data-sort-ignore="true"></th>
+            <th data-priority={{header.priority}} data-sort-ignore="{{!header.sort}}" data-hide="{{header.hide}}" data-ng-repeat="header in columnDefs">{{header.displayName}}</th>
+            <th data-sort-ignore="true" ng-show=commandColumnView data-ignore="true" data-name="View"></th>
+            <th data-sort-ignore="true" ng-show=commandColumnEdit data-ignore="true" data-name="Edit"></th>
+            <th data-sort-ignore="true" ng-show=commandColumnDelete data-ignore="true" data-name="Delete"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-show=tableLoading><td colspan="12">Carregando...</td></tr>
+        <tr data-ng-repeat="row in data | filter:search" repeat-finish="endRepeat()" data-ng-click="rowClick($event,row)" on-long-press="itemOnLongPress($event,row)" on-touch-end="itemOnTouchEnd($event,row)">
+            <td ng-show=commandColumnSelect><input data-role="none" ng-show=commandColumnSelect ng-model=row[select] type="checkbox" data-ng-click="rowSelectClick($event,row)" /></td>
+            <td data-ng-repeat="field in columnDefs" width="{{field.width}}"><div data-ng-cell>{{::row[field.field] | mobileNgTableFilter:field.filter}}</div></td>
+            <td ng-show=commandColumnView><a ng-show={{row[visualisable]}} href="#" data-role="button" data-iconpos="notext" data-ng-click="rowViewClick($event,row)"><span class="glyphicon glyphicon-search" style="cursor: pointer;"></span></a>{{row[Visualizavel]}}</td>
+            <td ng-show=commandColumnEdit><a ng-show={{row[editable]}} href="#" data-role="button" data-iconpos="notext" data-ng-click="rowEditClick($event,row)"><span class="glyphicon glyphicon-pencil" style="cursor: pointer;"></span></a>{{row[Editavel]}}</td>
+            <td ng-show=commandColumnDelete><a ng-show={{row[deletable]}} href="#" data-role="button" data-iconpos="notext" data-ng-click="rowDeleteClick($event,row)"><span class="glyphicon glyphicon-remove" style="cursor: pointer;"></span></a>{{row[Deletavel]}}</td>
+        </tr>
+    </tbody>
+    <tfoot ng-show=pager.enable>
+        <tr>
+            <th colspan="12">
+                <div data-role="display" style="float: left;" class="{{pager.class}}">
+                    <button type="button" data-role="page-first" title="First Page" class="btn btn-default btn-sm" data-ng-click="pagerFirstClick($event, pager)"><span class="glyphicon glyphicon-step-backward"></span></button>&nbsp;
+                    <button type="button" data-role="page-previous" title="Previous Page" class="btn btn-default btn-sm" data-ng-click="pagerPreviousClick($event, pager)"><span class="glyphicon glyphicon-backward"></span></button>&nbsp;
+                    Pagina &nbsp;<input data-role="none" ng-model="pager.startPage" class="input-sm" style="width: 40px; text-align: right;" type="text" value="{{pager.startPage}}">&nbsp; de &nbsp; {{ functionTotal(pager.total, pager.limitPerPage) }} &nbsp;
+                    <button type="button" data-role="page-next" title="Next Page" class="btn btn-default btn-sm" data-ng-click="pagerNextClick($event, pager)"><span class="glyphicon glyphicon-forward"></span></button>&nbsp;
+                    <button type="button" data-role="page-last" title="Last Page" class="btn btn-default btn-sm" data-ng-click="pagerLastClick($event, pager)"><span class="glyphicon glyphicon-step-forward"></span></button>&nbsp;
+                    <button type="button" data-role="page-refresh" title="Reload" class="btn btn-default btn-sm" data-ng-click="pagerReloadClick($event, pager)"><span class="glyphicon glyphicon-refresh"></span></button>&nbsp;
+                    <select data-role="page-size" class="input-sm" ng-model=pager.limitPerPage ng-change="pagerReloadClick($event, pager)">
+                        <option data-ng-repeat="size in pager.sizes" ng-selected="size == pager.limitPerPage" value="{{size}}">{{size}}</option>
+                    </select>
+                </div>
+                <div data-role="display" aria-label="Page navigation" style="float: right;">
+                    Exibindo &nbsp; {{pager.StartInterval | number}} &nbsp;-&nbsp; {{pager.EndInterval | number}} &nbsp; de &nbsp; {{pager.total}}
+                </div>
+            </th>
+        </tr>
+    </tfoot>
+</table>

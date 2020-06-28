@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="ListaTelefonica" lang="en" manifest="offline.appcache">
+<head>
+	<base href="/">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+	<meta http-equiv="Cache-control" content="public">
+	<title>{{ config.appName }}</title>
+
+  <link rel="stylesheet" href="/shared/styles/deps.min.css">
+  <link rel="stylesheet" href="/shared/styles/app.min.css">
+  <link rel="shortcut icon" href="/shared/styles/images/angularjs.png">
+
+	<!-- Add to home screen for Chrome on Android -->
+	<link rel="manifest" href="manifest.json">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<!-- Add to home screen for Safari on iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="ngProgressive">
+	<link rel="apple-touch-icon" href="/shared/styles/images/angularjs-152.png">
+
+	<!-- Add to home screen for Edge on Microsoft Windows -->
+	<meta name="msapplication-TileImage" content="/shared/styles/images/angularjs-144.png">
+	<meta name="msapplication-TileColor" content="#31af6e">
+</head>
+<body data-role="content">
+<!-- <ng-include include-replace src="'templates/' + config.template.templateName + '/index.html'"></ng-include> -->
+<div include-replace ng-include="'templates/' + config.template.templateName + '/index.html'"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFmELIQCXN_IWpjlJoq5l5OpITt1OrMx8"></script>
+<script src="/shared/behaviors/deps.min.js"></script>
+<script src="/shared/behaviors/app.min.js"></script>
+</body>
+</html>

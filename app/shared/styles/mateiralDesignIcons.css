@@ -1,0 +1,76 @@
+@font-face {
+   font-family: 'Material Icons';
+   font-style: normal;
+   font-weight: 400;
+   src: url(./fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+   src: local('Material Icons'),
+        local('MaterialIcons-Regular'),
+        url(./fonts/MaterialIcons-Regular.woff2) format('woff2'),
+        url(./fonts/MaterialIcons-Regular.woff) format('woff'),
+        url(./fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+/* Material Desing Lite HaCks */
+
+.material-icons.md-18 {
+  font-size: 18px !important;
+  height: 18px !important;
+  width: 18px !important;
+}
+.material-icons.md-24 {
+  font-size: 24px !important;
+  height: 24px !important;
+  width: 24px !important;
+}
+.material-icons.md-36 {
+  font-size: 36px !important;
+  height: 36px !important;
+  width: 36px !important;
+}
+.material-icons.md-48 {
+  font-size: 48px !important;
+  height: 48px !important;
+  width: 48px !important;
+}
+
+.mdl-button--icon.md-68 {
+  font-size: 68px !important;
+  height: 68px !important;
+  width: 68px !important;
+  min-width: initial !important;
+  min-height: initial !important;
+}
+
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+/* Material Desing Lite HaCks */

@@ -1,0 +1,38 @@
+CACHE MANIFEST
+# 2020-06-27:v01.173400
+
+# Explicitly cached 'master entries'.
+CACHE:
+/index.html
+/manifest.json
+/offline.appcache
+/templates/template-01/index.html
+/templates/template-01/footer.html
+/templates/template-02/index.html
+/templates/template-02/footer.html
+/templates/template-03/index.html
+/templates/template-03/footer.html
+/shared/behaviors/deps.min.js
+/shared/behaviors/deps.persist.js
+/shared/behaviors/app.min.js
+/shared/styles/deps.min.css
+/shared/styles/app.min.css
+/shared/styles/fonts/MaterialIcons-Regular.eot
+/shared/styles/fonts/MaterialIcons-Regular.woff2
+/shared/styles/fonts/MaterialIcons-Regular.woff
+/shared/styles/fonts/MaterialIcons-Regular.ttf
+/shared/styles/images/angularjs-192.png
+/shared/styles/images/angularjs-152.png
+/shared/styles/images/angularjs-144.png
+/shared/styles/images/angularjs-256.png
+/shared/styles/images/angularjs.png
+/shared/styles/images/mdl-template-android-dot-com/android-logo-white.png
+
+# Resources that require the user to be online.
+NETWORK:
+http://localhost:3000/contatos
+
+# static.html will be served if main.py is inaccessible
+# offline.jpg will be served in place of all images in images/large/
+# offline.html will be served in place of all other .html files
+FALLBACK:

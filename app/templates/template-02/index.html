@@ -1,0 +1,76 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer">
+	<header class="android-header mdl-layout__header">
+		<div class="mdl-layout-icon"></div>
+		<div class="mdl-layout__header-row">
+		  <span class="mdl-layout__title mdl-layout--large-screen-only">ngProgressive</span>
+		  <span class="mdl-layout__title mdl-layout--small-screen-only">ngP</span>
+  		  <select class="form-control col-md-4" style="width: 36%;" ng-model="config.template" ng-options="t.templateName for t in config.templates | orderBy:'templateName'">
+		  </select>
+		  <div class="android-header-spacer mdl-layout-spacer"></div>
+		  <div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="search-field" ng-model="pesquisarDados" ng-model-options="{updateOn: 'default blur', debounce:{default: 500, blur: 0}}" placeholder="O que você está buscando?">
+            </div>
+          </div>
+          <div class="android-navigation-container">
+			  <nav class="android-navigation mdl-navigation">
+			    <a class="mdl-navigation__link mdl-typography--text-uppercase mdl-layout--large-screen-only" href="#!/contatos/contatos">Contatos</a>
+			    <a class="mdl-navigation__link mdl-typography--text-uppercase mdl-layout--large-screen-only" href="#!/memeMaker/MemeMaker">Memes</a>
+			    <a class="mdl-navigation__link mdl-typography--text-uppercase mdl-layout--large-screen-only" href="#!/quickMenu/quickMenu">Quick Menu</a>
+			    <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="demo-menu-lower-right">
+		        	<i class="material-icons">more_vert</i>
+		      	</button>
+			    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+			      <li class="mdl-menu__item mdl-layout--small-screen-only"><a class="mdl-navigation__link" href="#!/contatos/contatos">Contatos</a></li>
+			      <li class="mdl-menu__item mdl-layout--small-screen-only"><a class="mdl-navigation__link" href="#!/memeMaker/MemeMaker">Memes</a></li>
+			      <li class="mdl-menu__item mdl-layout--small-screen-only"><a class="mdl-navigation__link" href="#!/quickMenu/quickMenu">Quick Menu</a></li>
+			      <div class="android-drawer-separator mdl-layout--small-screen-only"></div>
+			      <span class="mdl-navigation__link mdl-layout--small-screen-only" href="">ngProgressive</span>
+				  <li class="mdl-menu__item"><a class="mdl-navigation__link" href="#!/ngProgressive/ngProgressive-Table">Table</a></li>
+				  <li class="mdl-menu__item"><a class="mdl-navigation__link" href="#!/ngProgressive/ngProgressive-Accordion">Accordion</a></li>
+				  <div class="android-drawer-separator mdl-layout--small-screen-only"></div>
+				  <li class="mdl-menu__item mdl-layout--small-screen-only"><a class="mdl-navigation__link" href="#!/sair">Sair</a></li>
+				</ul>
+				<button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect mdl-layout--large-screen-only" id="demo-menu-lower-exit">
+		        	<i class="material-icons">person</i>
+		      	</button>
+		      	<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-exit">
+				  <li class="mdl-menu__item"><a href="#!/sair">Sair</a></li>
+				</ul>
+			  </nav>
+		  </div>
+		</div>
+	</header>
+
+	<div class="android-drawer mdl-layout__drawer">
+	  	<span class="mdl-layout-title">
+	  		<img src="shared/styles/images/angularjs-192.png" />
+        </span>
+		<nav class="mdl-navigation">
+		  <a class="mdl-navigation__link" href="#!/contatos/contatos">Contatos</a>
+		  <a class="mdl-navigation__link" href="#!/memeMaker/MemeMaker">Memes</a>
+		  <a class="mdl-navigation__link" href="#!/quickMenu/quickMenu">Quick Menu</a>
+		  <div class="android-drawer-separator"></div>
+          <span class="mdl-navigation__link" href="">ngProgressive</span>
+          <a class="mdl-navigation__link" href="#!/ngProgressive/ngProgressive-Table">Table</a>
+          <a class="mdl-navigation__link" href="#!/ngProgressive/ngProgressive-Accordion">Accordion</a>
+          <div class="android-drawer-separator"></div>
+		  <a class="mdl-navigation__link" href="#">Sair</a>
+		</nav>
+	</div>
+
+	<main class="mdl-layout__content">
+		<div>
+			<div class="jumbotron" ng-show="loading">
+				<h5>Carregando, por favor aguarde...</h5>
+			</div>
+			<div ng-hide="loading">
+				<div ng-view=""></div>
+			</div>
+		</div>
+		<div ng-include="'templates/template-02/footer.html'"></div>
+	</main>
+</div>

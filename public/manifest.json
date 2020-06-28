@@ -1,0 +1,29 @@
+{
+  "name": "ngProgressive",
+  "short_name": "ngProgressive",
+  "icons": [{
+    "src": "shared/styles/images/angularjs.png",
+    "sizes": "128x128",
+    "type": "image/png"
+  }, {
+    "src": "shared/styles/images/angularjs-144.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  }, {
+    "src": "shared/styles/images/angularjs-152.png",
+    "sizes": "152x152",
+    "type": "image/png"
+  }, {
+    "src": "shared/styles/images/angularjs-192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }, {
+    "src": "shared/styles/images/angularjs-256.png",
+    "sizes": "256x256",
+    "type": "image/png"
+  }],
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#258754",
+  "theme_color": "#31af6e"
+}

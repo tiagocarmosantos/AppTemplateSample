@@ -1,0 +1,45 @@
+﻿<table data-role="table" data-mode="columntoggle" class="{{class}}">
+    <thead>
+        <tr>
+            <th ng-show=commandColumnSelect data-sort-ignore="true"></th>
+            <th data-priority={{header.priority}} data-sort-ignore="{{!header.sort}}" data-hide="{{header.hide}}" data-ng-repeat="header in columnDefs">{{header.displayName}}</th>
+            <th data-sort-ignore="true" ng-show=commandColumnView data-ignore="true" data-name="View"></th>
+            <th data-sort-ignore="true" ng-show=commandColumnEdit data-ignore="true" data-name="Edit"></th>
+            <th data-sort-ignore="true" ng-show=commandColumnDelete data-ignore="true" data-name="Delete"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-show=tableLoading><td colspan="12">Carregando...</td></tr>
+        <tr data-ng-repeat="row in data | filter:search" repeat-finish="endRepeat()" data-ng-click="rowClick($event,row)" on-long-press="itemOnLongPress($event,row)" on-touch-end="itemOnTouchEnd($event,row)">
+            <td ng-show=commandColumnSelect><input data-role="none" ng-show=commandColumnSelect ng-model=row[select] type="checkbox" data-ng-click="rowSelectClick($event,row)" /></td>
+            <td data-ng-repeat="field in columnDefs" width="{{field.width}}"><div data-ng-cell>{{::row[field.field] | mobileNgTableFilter:field.filter}}</div></td>
+            <td ng-show=commandColumnView><a ng-show={{row[visualisable]}} href="#" data-role="button" data-iconpos="notext" data-ng-click="rowViewClick($event,row)"> View </a>{{row[Visualizavel]}}</td>
+            <td ng-show=commandColumnEdit><a ng-show={{row[editable]}} href="#" data-role="button" data-iconpos="notext" data-ng-click="rowEditClick($event,row)"> Edit </a>{{row[Editavel]}}</td>
+            <td ng-show=commandColumnDelete><a ng-show={{row[deletable]}} href="#" data-role="button" data-iconpos="notext" data-ng-click="rowDeleteClick($event,row)"> Delete </a>{{row[Deletavel]}}</td>
+        </tr>
+    </tbody>
+    <tfoot ng-show=pager.enable>
+        <tr>
+            <th colspan="12">
+                <nav aria-label="Page navigation" style="float: left;" >
+                    <ul class="{{pager.class}}">
+                        <li><a href="" aria-label="First" data-ng-click="pagerFirstClick($event, pager)"><span aria-hidden="true">&laquo;</span></a></li>
+                        <li><a href="" aria-label="Previous" data-ng-click="pagerPreviousClick($event, pager)"><span aria-hidden="true">&lsaquo;</span></a></li>
+                        <li>&nbsp;<input data-role="none" ng-model="pager.startPage" style="width: 40px; text-align: right;" type="text" value="{{pager.startPage}}"/>&nbsp; de &nbsp; {{ functionTotal(pager.total, pager.limitPerPage) }}&nbsp;</li>
+                        <li><a href="" aria-label="Next" data-ng-click="pagerNextClick($event, pager)"><span aria-hidden="true">&rsaquo;</span></a></li>
+                        <li><a href="" aria-label="Last" data-ng-click="pagerLastClick($event, pager)"><span aria-hidden="true">&raquo;</span></a></li>
+                        <li>
+                            <select data-role="none" class="input-sm" ng-model=pager.limitPerPage ng-change="pagerReloadClick($event, pager)" >
+                                <option data-ng-repeat="size in pager.sizes" ng-selected="size == pager.limitPerPage" value="{{size}}">{{size}}</option>
+                            </select>
+                        </li>
+                        <li><a href="" aria-label="Reload" data-ng-click="pagerReloadClick($event, pager)"><span aria-hidden="true">Reload</span></a></li>
+                    </ul>
+                </nav>
+                <div aria-label="Page navigation" style="float: right;">
+                    Exibindo &nbsp; {{pager.StartInterval | number}} &nbsp;-&nbsp; {{pager.EndInterval | number}} &nbsp; de &nbsp; {{pager.total}}
+                </div>
+            </th>
+        </tr>
+    </tfoot>
+</table>

@@ -1,0 +1,29 @@
+<div ng-controller="listPicMeController as lpmCtrl">
+  <div id="picMeList" name="PicMeList" class="mdl-grid content-center" ng-show="!lpmCtrl.showQRCode" >
+      <div class="card mdl-cell mdl-cell--3-col mdl-cell--top border-dark" ng-repeat="picMe in lpmCtrl.picsMe | filter: pesquisarDados track by $index">
+        <img class="card-img-top img-fluid img-thumbnail" src="{{ picMe.image.content }}">
+        <div class="card-body">
+          <p class="card-text">{{ picMe.image.title }}</p>
+        </div>
+      </div>
+  </div>
+  <div name="PicMeQRCode" class="mdl-grid content-center" ng-show="lpmCtrl.showQRCode">
+      <div class="card mdl-cell mdl-cell--12-col-phone mdl-cell--6-col-tablet mdl-cell--4-col-desktop mdl-cell--top border-dark text-center">
+        <canvas id="picMeQRCode" class="card-img-top img-fluid img-thumbnail"></canvas>
+      </div>
+  </div>
+  <div class="actions-bottom bgWhite android-header mdl-layout__header no-print is-casting-shadow">
+    <div class="mdl-grid content-center">
+      <div class="mdl-cell mdl-cell--6-col mdl-cell--1-col-phone mdl-cell--2-col-tablet text-center">
+        <a class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored md-68" ng-href="{{ lpmCtrl.routeNewPicMe }}">
+          <i class="material-icons md-dark md-48">add</i>
+        </a>
+      </div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--1-col-phone mdl-cell--2-col-tablet text-center">
+        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored md-68" ng-click="lpmCtrl.qrCodePicMe()">
+          <i class="material-icons md-dark md-48">share</i>
+        </button>
+        </div>
+    </div>
+  </div>
+</div>

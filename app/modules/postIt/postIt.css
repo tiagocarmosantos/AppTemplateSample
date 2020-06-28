@@ -1,0 +1,19 @@
+.no-print { 
+	display:block; 
+}
+
+@media print {
+
+	.no-print { 
+		display:none; 
+	}
+
+	nav, footer, video, audio, object, embed { 
+		display:none; 
+	}
+
+	blockquote {
+  		page-break-before: avoid;
+  		page-break-inside: auto;
+	}
+}
