@@ -8,10 +8,15 @@
 
 		$routeProvider.when("/:dirName*", {
 			templateUrl: function (urlattr) {
-				return `/modules/${urlattr.dirName}.html`
+				console.log(urlattr.dirName.trim().toLowerCase())
+				return (
+							urlattr.dirName.trim().toLowerCase() == `auth/login`
+							? `/shared/security/${urlattr.dirName}.html`
+							: `/modules/${urlattr.dirName}.html`
+					   ) 
 			}
 		}).otherwise({
-	        redirectTo: '/contatos/contatos'
+	        redirectTo: `/auth/login`
 	    });
 
 	}

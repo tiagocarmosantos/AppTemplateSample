@@ -8,9 +8,9 @@
 	<meta http-equiv="Cache-control" content="public">
 	<title>{{ config.appName }}</title>
 
-  <link rel="stylesheet" href="/shared/styles/deps.min.css">
-  <link rel="stylesheet" href="/shared/styles/app.min.css">
-  <link rel="shortcut icon" href="/shared/styles/images/angularjs.png">
+	<link rel="stylesheet" href="/shared/styles/deps.min.css">
+	<link rel="stylesheet" href="/shared/styles/app.min.css">
+	<link rel="shortcut icon" href="/shared/styles/images/angularjs.png">
 
 	<!-- Add to home screen for Chrome on Android -->
 	<link rel="manifest" href="manifest.json">
@@ -25,10 +25,13 @@
 	<!-- Add to home screen for Edge on Microsoft Windows -->
 	<meta name="msapplication-TileImage" content="/shared/styles/images/angularjs-144.png">
 	<meta name="msapplication-TileColor" content="#31af6e">
+
+	<meta name="google-signin-client_id" content="324031918063-ubeq5fdudk5ibcplhi6phkvdglf794uk.apps.googleusercontent.com">
 </head>
 <body data-role="content">
 <!-- <ng-include include-replace src="'templates/' + config.template.templateName + '/index.html'"></ng-include> -->
 <div include-replace ng-include="'templates/' + config.template.templateName + '/index.html'"></div>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFmELIQCXN_IWpjlJoq5l5OpITt1OrMx8"></script>
 <script src="/shared/behaviors/deps.min.js"></script>
 <script src="/shared/behaviors/app.min.js"></script>

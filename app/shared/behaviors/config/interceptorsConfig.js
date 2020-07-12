@@ -9,6 +9,7 @@
 		//$httpProvider.interceptors.push("timeStampInterceptor");
 		$httpProvider.interceptors.push("errorInterceptor");
 		$httpProvider.interceptors.push("loadingInterceptor");
+		$httpProvider.interceptors.push("authInterceptor");
 	}
 
 })()

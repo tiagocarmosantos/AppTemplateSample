@@ -1,0 +1,22 @@
+#loginForm {
+	padding-top: 10%!important;
+}
+
+#loginForm > h1 {
+    display: flex!important;
+    flex-wrap: wrap!important;
+    justify-content: space-around!important;
+    padding: 5%!important;
+}
+
+#loginForm > div > div {
+    display: flex!important;
+    flex-wrap: wrap!important;
+    justify-content: space-around!important;
+    padding: 5%!important;
+}
+
+#facebookBtn {
+	background-color: darkslateblue!important;
+    color: white!important;
+}

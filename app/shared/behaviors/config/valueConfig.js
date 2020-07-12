@@ -25,6 +25,16 @@
 		$rootScope.config = config
 		$rootScope.showHeader = true
 		$rootScope.showFooter = true
+		$rootScope.User = {
+			                ID: null,
+			                Name: null,
+			                ImageURL: null,
+			                Email: null,
+			                idToken: null,
+			                Logado: false,
+			                onSignIn: () => {},
+			                onSignOut: () => {}
+				          }
 	}])
 	
 })()

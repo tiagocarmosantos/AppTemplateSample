@@ -16,6 +16,15 @@
 			})
 		}
 
+		var _getPicsMe = function(filterParam, filterValue) {
+			return $http.get(`${config.oapiUrl}/picMe/?filter=${filterParam}:${filterValue}`).then(function (response) { 
+				return JSON.parse(JSON.stringify(response.data))
+			}).catch(function (response) {
+				console.log(response)
+				throw Error('Aconteceu um problema: Não foi possível carregar os dados!')
+			})
+		}
+
 		var _getPicMe = function(id) {
 			return $http.get(config.oapiUrl + "/picMe/" + id).then(function (response) { 
 				return JSON.parse(JSON.stringify(response.data))

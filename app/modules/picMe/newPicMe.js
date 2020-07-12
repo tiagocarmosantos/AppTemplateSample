@@ -71,9 +71,9 @@
               imageSensor: { 
                 element: document.querySelector("#picMeImage"),
                 user: {
-                    name: 'defaultUser',
-                    email: 'default@email.com',
-                    password: 'defaultPassword'
+                    name: $rootScope.User.Name,
+                    email: $rootScope.User.Email,
+                    password: 'default'
                 },
                 image: {
                   title: '',

@@ -10,13 +10,13 @@
         vm.picsMe = [{ image: { content: '' }}, { image: { content: '' }}, { image: { content: '' }}, { image: { content: '' }}, { image: { content: '' }}, { image: { content: '' }}, { image: { content: '' }}]
 
         vm.listPicMe = () => {
-          picMeAPI.getPicsMe()
-            .then((data) => { 
-              vm.picsMe = data
-            })
-            .catch(error => {
-                  console.log(error)
-            })
+          picMeAPI.getPicsMe('user.email', $rootScope.User.Email)
+          .then((data) => { 
+            vm.picsMe = data
+          })
+          .catch(error => {
+                console.log(error)
+          })
         }
 
         vm.qrCodePicMe = () => {

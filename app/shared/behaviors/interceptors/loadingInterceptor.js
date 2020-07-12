@@ -15,9 +15,7 @@
 				return $q.reject(rejection);
 			},
 			response: function(response){
-				$timeout(function(){
-							$rootScope.loading = false;
-						 }, 500);
+				$timeout(function() { $rootScope.loading = false; }, 500);
 				return response;
 			},
 			responseError: function(rejection){
