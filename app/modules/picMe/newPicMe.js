@@ -97,6 +97,8 @@
 
         $scope.$on('$destroy', () => {
             vm.picme.videoSensor.stopStream()
+            $rootScope.showFooter = true
+            $rootScope.showHeader = true
         })
 
         $scope.$on('$viewContentLoaded', () => {

@@ -11,7 +11,7 @@
 	angular.module("ListaTelefonica").constant("config", {
 		appName: 'NPWA - NgProgressiveWebApp',
 		template: { templateName: 'template-01'},
-		templates: [{ templateName: 'template-01'}, { templateName: 'template-02'}, { templateName: 'template-03'}],
+		templates: [{ templateName: 'template-01' }, { templateName: 'template-02' }, { templateName: 'template-03' }],
 		defaultRoute: '/picMe/listPicMe',
 		previousRoute: '',
 		version: '1.0',
@@ -27,8 +27,7 @@
 		$rootScope.config = config
 		$rootScope.showHeader = true
 		$rootScope.showFooter = true
-		$rootScope.User = { ID: null, Name: null, ImageURL: null, Email: null, idToken: null, Logado: false,
-			                onSignIn: () => {}, onSignOut: () => {} }
+		$rootScope.User = { ID: null, Name: null, ImageURL: null, Email: null, idToken: null, Logado: false, onSignIn: () => {}, onSignOut: () => {} }	
 	}])
 	
 })()

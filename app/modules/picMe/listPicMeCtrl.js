@@ -23,25 +23,24 @@
         vm.qrCodePicMe = () => {
           console.log('qrCodePicMe')
           var canvas = document.querySelector("#picMeQRCode")
-          debugger;
-          console.log($location)
-          console.log($window)
-          var urlNewPicMe = `${$window.location.origin}${vm.routeNewPicMe}`
+          var routeNewPicMeAnonymousUser = `${$window.location.origin}${vm.routeNewPicMe}&name=Anonymous`
 
-          QRCode.toCanvas(canvas, urlNewPicMe)
+          QRCode.toCanvas(canvas, routeNewPicMeAnonymousUser)
           vm.showQRCode = !vm.showQRCode
         }
 
         (function initController() {
             $rootScope.showHeader = true
             $rootScope.showFooter = false
-            vm.routeNewPicMe = `#!/picMe/newPicMe?name=${$rootScope.User.Name}&email=${$rootScope.User.Email}`
+            vm.routeNewPicMe = `#!/picMe/newPicMe?email=${$rootScope.User.Email}`
+            vm.routeNewPicMeAuthUser = `${vm.routeNewPicMe}&name=${$rootScope.User.Name}`
             vm.showQRCode = false
             vm.listPicMe()
         })()
 
         $scope.$on('$destroy', () => {
-          
+            $rootScope.showHeader = true
+            $rootScope.showFooter = true
         })
 
         $scope.$on('$viewContentLoaded', () => {
