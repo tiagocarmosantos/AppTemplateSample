@@ -18,10 +18,10 @@
 		owner: 'Tiago Carmo Santos',
 		year: '2018',
 		site: 'https://br.linkedin.com/in/tiagocarmosantos',
-		apiUrl: 'http://localhost:3003/api',
-		oapiUrl: 'http://localhost:3003/oapi',
-		//apiUrl: 'https://microservice-sample.herokuapp.com/api',
-		//oapiUrl: 'https://microservice-sample.herokuapp.com/oapi',
+		//apiUrl: 'http://localhost:3003/api',
+		//oapiUrl: 'http://localhost:3003/oapi',
+		apiUrl: 'https://microservice-sample.herokuapp.com/api',
+		apiUrl: 'https://microservice-sample.herokuapp.com/oapi',
 		userKey: '_lista_telefonica_app_user'
 	}).run(['$rootScope', 'config', function ($rootScope, config) {
 		$rootScope.config = config
