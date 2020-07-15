@@ -2,27 +2,31 @@
     
     'use strict';
 
-    angular.module("ListaTelefonica").controller("listPicMeController", ['picMeAPI', '$rootScope', '$scope', '$window', listPicMeController])
+    angular.module("ListaTelefonica").controller("listPicMeController", ['picMeAPI', '$rootScope', '$scope', '$window', '$location', '$timeout', listPicMeController])
 
-    function listPicMeController(picMeAPI, $rootScope, $scope, $window) { 
+    function listPicMeController(picMeAPI, $rootScope, $scope, $window, $location, $timeout) { 
 
         const vm = this
-        vm.picsMe = [{ image: { content: '' }}, { image: { content: '' }}, { image: { content: '' }}, { image: { content: '' }}, { image: { content: '' }}, { image: { content: '' }}, { image: { content: '' }}]
+        vm.picsMe = Array(3).fill({ image: { content: '' }})
 
         vm.listPicMe = () => {
-          picMeAPI.getPicsMe('user.email', $rootScope.User.Email)
-          .then((data) => { 
-            vm.picsMe = data
-          })
-          .catch(error => {
+            picMeAPI.getPicsMe('user.email', $rootScope.User.Email).then(data => { 
+               $scope.$evalAsync(() => { 
+                  vm.picsMe = data
+                })
+            })
+            .catch(error => {
                 console.log(error)
-          })
+            })
         }
 
         vm.qrCodePicMe = () => {
           console.log('qrCodePicMe')
           var canvas = document.querySelector("#picMeQRCode")
-          var urlNewPicMe = `${window.location.origin}${vm.routeNewPicMe}`
+          debugger;
+          console.log($location)
+          console.log($window)
+          var urlNewPicMe = `${$window.location.origin}${vm.routeNewPicMe}`
 
           QRCode.toCanvas(canvas, urlNewPicMe)
           vm.showQRCode = !vm.showQRCode
@@ -31,21 +35,18 @@
         (function initController() {
             $rootScope.showHeader = true
             $rootScope.showFooter = false
-            vm.routeNewPicMe = '#!/picMe/newPicMe'
+            vm.routeNewPicMe = `#!/picMe/newPicMe?name=${$rootScope.User.Name}&email=${$rootScope.User.Email}`
             vm.showQRCode = false
             vm.listPicMe()
         })()
 
-        // Clean up stuff
         $scope.$on('$destroy', () => {
           
         })
 
-        // Here your view content is fully loaded !!
         $scope.$on('$viewContentLoaded', () => {
           
         })
-
     }
 
 })()

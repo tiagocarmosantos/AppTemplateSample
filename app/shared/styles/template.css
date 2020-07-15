@@ -156,3 +156,24 @@ hr{
     width: 100%;
     z-index: 14;
 }
+
+.gridContainer{
+    display: grid;
+}
+
+.gridContainerFullscreen {
+    width: 100vw;
+    height: 100vh;
+}
+
+.underGridContainer {
+    grid-column: 1;
+    grid-row: var(--underGridContainer-Row);
+    align-self: var(--underGridContainer-AlignSelf);
+}
+
+.overGridContainer {
+    grid-column: 1;
+    grid-row: var(--overGridContainer-Row);
+    align-self: var(--overGridContainer-AlignSelf);
+}

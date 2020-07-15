@@ -7,40 +7,34 @@
 
 	function quickMenuAPI($http, config) {
 
-		var _getQuickMenus = function() {
-			return $http.get(config.oapiUrl + "/quickMenu").then(function (response) { 
+		var _getQuickMenus = () => {
+			return $http.get(`${config.oapiUrl}/quickMenu`).then(response => { 
 				return JSON.parse(JSON.stringify(response.data))
-			}).catch(function (response) {
-				console.log(response)
+			}).catch(error => {
 				throw Error('Aconteceu um problema: Não foi possível carregar os dados!')
 			});
 		};
 
-		var _getQuickMenu = function(id) {
-			return $http.get(config.oapiUrl + "/quickMenu/" + id).then(function (response) { 
+		var _getQuickMenu = id => {
+			return $http.get(`${config.oapiUrl}/quickMenu/${id}`).then(response => { 
 				return JSON.parse(JSON.stringify(response.data))
-			}).catch(function (response) {
-				console.log(response)
+			}).catch(error => {
 				throw Error('Aconteceu um problema: Não foi possível carregar os dados!')
 			});
 		};
 
-		var _saveQuickMenu = function(quickMenu) {
-			return $http.post(config.oapiUrl + "/quickMenu", quickMenu).then(function (response) {
-				//debugger;
-				return JSON.parse(JSON.stringify(response.config.data))
-			}).catch(function (response) {
-				//debugger;
-				console.log(response)
+		var _saveQuickMenu = quickMenu => {
+			return $http.post(`${config.oapiUrl}/quickMenu`, quickMenu).then(response => {
+				return JSON.parse(JSON.stringify(response.data))
+			}).catch(error => {
 				throw Error('Aconteceu um problema: Não foi possível salvar os dados!')
 			});
 		};
 
-		var _deleteQuickMenu = function(quickMenu) {
-			return $http.delete(config.oapiUrl + "/quickMenu/" + quickMenu.id).then(function (response) {
+		var _deleteQuickMenu = id => {
+			return $http.delete(`${config.oapiUrl}/quickMenu/${id}`).then(response => {
 				return JSON.parse(JSON.stringify(response.data))
-			}).catch(function (response) {
-				console.log(response)
+			}).catch(error => {
 				throw Error('Aconteceu um problema: Não foi possível deletar os dados!')
 			});
 		};

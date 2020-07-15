@@ -8,7 +8,7 @@
 
         const vm = this
 
-        vm.zoomQuickMenu = function ($event) {
+        vm.zoomQuickMenu = $event => {
           console.log($event.target)
           if ($event.target.style.transform == ''){
             $event.target.style.transform = 'scale(1.5)'
@@ -18,55 +18,51 @@
           console.log($event.target.style.transform)
         }
 
-        vm.clearQuickMenu = function () {
+        vm.clearQuickMenu = () => {
             vm.menu.title = ''
             vm.menu.subTitle = ''
             vm.menu.image = {}
             imageGenerator.drawImage('newImage', '') 
             vm.editMode = false
-        };
+        }
 
-        vm.saveQuickMenu = function () {
-
+        vm.saveQuickMenu = () => {
           if (!!vm.menu.title && !!vm.menu.subTitle && !!vm.menu.image.content) {
-              quickMenuAPI.saveQuickMenu(vm.menu).then((data) => {
+              quickMenuAPI.saveQuickMenu(vm.menu).then(data => {
                   vm.menus.push(Object.assign({},  data))
                   mobileNgMsg.addSuccess('Menu Adicionado com Sucesso!')
                   vm.clearQuickMenu()
               })
           }
+        }
 
-        };
-
-        vm.listQuickMenu = function () {
-          quickMenuAPI.getQuickMenus().then((data) => { 
-            vm.menus = data
+        vm.listQuickMenu = () => {
+          quickMenuAPI.getQuickMenus().then(data => { 
+              vm.menus = data
           })
-        };
+        }
 
-        vm.InitLoadImageQuickMenu = function () {
+        vm.InitLoadImageQuickMenu = () => {
             $rootScope.loading = true
-        };
+        }
 
-        vm.FinishLoadImageQuickMenu = function () {
-            
+        vm.FinishLoadImageQuickMenu = () => {
             var moderateConfig = { className: 'menu', probability: 0.97 }
-            IAGenerator.moderateFromIA('newImage', moderateConfig).then((predictionsApproved) => {
+            IAGenerator.moderateFromIA('newImage', moderateConfig).then(predictionsApproved => {
                 $scope.$apply(() => { 
                    vm.editMode = true
                    $rootScope.loading = false
                 })
-            }).catch((predictionsReproved) => {
+            }).catch(predictionsReproved => {
                 mobileNgMsg.addError(predictionsReproved.Msg)
                 mobileNgMsg.addError(predictionsReproved.Predictions)
 
-                $scope.$apply(() => { 
+                $scope.$evalAsync(() => { 
                     vm.clearQuickMenu()
                     $rootScope.loading = false
                 })
             })
-            
-        };
+        }
 
         (function initController() {
             vm.editMode = false

@@ -2,10 +2,7 @@
 
 	'use strict';
 
-	angular.module('ngComponents').factory('mobileNgMsg', [
-		'toastr', 
-		mobileNgMsg
-	])
+	angular.module('ngComponents').factory('mobileNgMsg', ['toastr', mobileNgMsg])
 
 	function mobileNgMsg(toastr) {
 		

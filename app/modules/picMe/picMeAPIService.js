@@ -7,54 +7,47 @@
 
 	function picMeAPI($http, config) {
 
-		var _getPicsMe = function() {
-			return $http.get(config.oapiUrl + "/picMe").then(function (response) { 
+		var _getPicsMe = () => {
+			return $http.get(`${config.oapiUrl}/picMe`).then(response => { 
 				return JSON.parse(JSON.stringify(response.data))
-			}).catch(function (response) {
-				console.log(response)
+			}).catch(error => {
 				throw Error('Aconteceu um problema: Não foi possível carregar os dados!')
 			})
 		}
 
-		var _getPicsMe = function(filterParam, filterValue) {
-			return $http.get(`${config.oapiUrl}/picMe/?filter=${filterParam}:${filterValue}`).then(function (response) { 
+		var _getPicsMe = (filterParam, filterValue) => {
+			return $http.get(`${config.oapiUrl}/picMe/?filter=${filterParam}:${filterValue}`).then(response => { 
 				return JSON.parse(JSON.stringify(response.data))
-			}).catch(function (response) {
-				console.log(response)
+			}).catch(error => {
 				throw Error('Aconteceu um problema: Não foi possível carregar os dados!')
 			})
 		}
 
-		var _getPicMe = function(id) {
-			return $http.get(config.oapiUrl + "/picMe/" + id).then(function (response) { 
+		var _getPicMe = id => {
+			return $http.get(`${config.oapiUrl}/picMe/${id}`).then(response => { 
 				return JSON.parse(JSON.stringify(response.data))
-			}).catch(function (response) {
-				console.log(response)
+			}).catch(error => {
 				throw Error('Aconteceu um problema: Não foi possível carregar os dados!')
 			})
 		}
 
-		var _savePicMe = function(picMe) {
-			return $http.post(config.oapiUrl + "/picMe", picMe).then(function (response) {
-				//debugger;
-				return JSON.parse(JSON.stringify(response.config.data))
-			}).catch(function (response) {
-				//debugger;
-				console.log(response)
+		var _savePicMe = picMe => {
+			return $http.post(`${config.oapiUrl}/picMe`, picMe).then(response => {
+				return JSON.parse(JSON.stringify(response.data))
+			}).catch(error => {
 				throw Error('Aconteceu um problema: Não foi possível salvar os dados!')
 			})
 		}
 
-		var _deletePicMe = function(picMe) {
-			return $http.delete(config.oapiUrl + "/picMe/" + picMe.id).then(function (response) {
+		var _deletePicMe = id => {
+			return $http.delete(`${config.oapiUrl}/picMe/${id}`).then(response => {
 				return JSON.parse(JSON.stringify(response.data))
-			}).catch(function (response) {
-				console.log(response)
+			}).catch(error => {
 				throw Error('Aconteceu um problema: Não foi possível deletar os dados!')
 			})
 		}
 
-    	var _createFilter = function(name, config) {
+    	var _createFilter = (name, config) => {
             return  {
                       name: name,
                       config: config,
@@ -64,7 +57,7 @@
                     }
         }
 
-    	var _getFilters = function() {
+    	var _getFilters = () => {
           return {
               filterIndex: 0,
               options: [_createFilter('grayscale', '1'), _createFilter('sepia', '1'), _createFilter('blur', '5px'), _createFilter('brightness', '0.45'), _createFilter('contrast', '1'), _createFilter('hue-rotate', '90deg'), _createFilter('hue-rotate2', '1'), _createFilter('hue-rotate3', '1'), _createFilter('saturate', '4'), _createFilter('invert', '.8'), _createFilter('opacity', '.5'), _createFilter('none', '')],
@@ -80,11 +73,11 @@
           }
         }
 
-        var _randomNumber = function (min, max) {
+        var _randomNumber = (min, max) => {
             return (Math.floor(Math.random() * max) + min)
         }
 
-        var _downloadURL = function (values, name, type) {
+        var _downloadURL = (values, name, type) => {
           let downloadLink = document.createElement('a')
           downloadLink.href = values
           downloadLink.target = '_blank'
@@ -92,7 +85,7 @@
           downloadLink.click()
         }
 
-        var _downloadBlob = function (values, name, type) {
+        var _downloadBlob = (values, name, type) => {
 			var blob = new Blob([values], { type: type })
 			var url = URL.createObjectURL(blob)
 			_downloadURL(url, name, type)

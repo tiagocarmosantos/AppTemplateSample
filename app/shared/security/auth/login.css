@@ -1,22 +1,53 @@
-#loginForm {
-	padding-top: 10%!important;
+#loginSection .underGridContainer {
+    --underGridContainer-Row: 1!important;
 }
 
-#loginForm > h1 {
+#loginSection .overGridContainer {
+    --overGridContainer-Row: 1!important;
+    --overGridContainer-AlignSelf: center!important;
+    width: 100%!important;
+    height: 100%!important;
+    justify-content: center!important;
+}
+
+#loginSection .bgSolidColor {
+    background-color: darkslategray!important;
+    background-size: cover!important;
+}
+
+#loginSection .bgLinearColor {
+    background-image: linear-gradient(45deg, blue, red)!important;
+    background-size: cover!important;
+}
+
+#loginSection .bgImage {
+    background-image: url('images/mdl-template-android-dot-com/devices.jpg')!important;
+    background-size: cover!important;
+    filter: blur(10px)!important;
+}
+
+#loginForm > div {
+	align-self: center;
+}
+
+#loginForm > div > h1 {
     display: flex!important;
     flex-wrap: wrap!important;
     justify-content: space-around!important;
-    padding: 5%!important;
 }
 
 #loginForm > div > div {
     display: flex!important;
     flex-wrap: wrap!important;
     justify-content: space-around!important;
-    padding: 5%!important;
 }
 
 #facebookBtn {
 	background-color: darkslateblue!important;
     color: white!important;
 }
+
+#googleBtn {
+
+}
+

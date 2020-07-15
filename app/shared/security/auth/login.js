@@ -18,8 +18,9 @@
             vm.User.Email = profile.getEmail()
             vm.User.Logado = true
             vm.User.idToken = googleUser.getAuthResponse().id_token;
-
-            $window.location.assign(`${$window.location.origin}/#!/picMe/listPicMe`)
+            
+            let redirectRoute = (!!$rootScope.config.previousRoute ? $rootScope.config.previousRoute : $rootScope.config.defaultRoute)
+            $window.location.assign(`${$window.location.origin}/#!${redirectRoute}`)
         }
 
         function onSignOut () {

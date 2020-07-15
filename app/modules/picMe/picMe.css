@@ -16,3 +16,10 @@
 #picMeList{
 	padding-bottom: 30%;
 }
+
+.picMeSubTitle {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    color: white;
+    margin: 0 auto;
+}

@@ -2,9 +2,9 @@
     
     'use strict';
 
-    angular.module("ListaTelefonica").controller("newPicMeController", ['picMeAPI', '$rootScope', '$scope', '$window', newPicMeController])
+    angular.module("ListaTelefonica").controller("newPicMeController", ['picMeAPI', 'mobileNgMsg', '$rootScope', '$scope', '$window', '$location', newPicMeController])
 
-    function newPicMeController(picMeAPI, $rootScope, $scope, $window) { 
+    function newPicMeController(picMeAPI, mobileNgMsg, $rootScope, $scope, $window, $location) { 
 
         const vm = this
 
@@ -19,18 +19,18 @@
             vm.picme.canvasSensor.element.height = vm.picme.videoSensor.element.videoHeight
             vm.picme.canvasSensor.element.getContext('2d').drawImage(vm.picme.videoSensor.element, 0, 0)
 
-            vm.picme.imageSensor.image.title = `${new Date().toLocaleString()}.png`
-            vm.picme.imageSensor.image.contentType = 'image/png'
+            vm.picme.imageSensor.image.title = new Date().toLocaleString()
+            vm.picme.imageSensor.image.contentType = 'image/webp'
             vm.picme.imageSensor.image.content = vm.picme.canvasSensor.element.toDataURL('image/webp')
 
-            picMeAPI.savePicMe({ user: vm.picme.imageSensor.user, image: vm.picme.imageSensor.image })
-              .then(data => {
-                  console.log(data)
-                  //picMeAPI.downloadURL(vm.picme.imageSensor.image.content, `picMe.png`, 'image/png')
-              })
-              .catch(error => {
-                  console.log(error)
-              })
+            picMeAPI.savePicMe({ user: vm.picme.imageSensor.user, image: vm.picme.imageSensor.image }).then(data => {
+                console.log(data)
+                mobileNgMsg.addSuccess('PicME Salvo!')
+            })
+            .catch(error => {
+                console.log(error)
+                mobileNgMsg.addError(error.message)
+            })
         }
 
         vm.switchCam = () => {
@@ -49,7 +49,7 @@
                 filters: picMeAPI.getFilters(),
                 stopStream: function() {
                   if (this.stream) {
-                      this.stream.getTracks().map((track) => {
+                      this.stream.getTracks().map(track => {
                         track.stop();
                       })
                   }
@@ -59,7 +59,7 @@
 
                   var mediaConfig = { audio: false, video: { facingMode: (this.front? "user" : "environment") }  }
                   navigator.mediaDevices.getUserMedia = navigator.mediaDevices.getUserMedia || navigator.mediaDevices.webkitGetUserMedia || navigator.mediaDevices.mozGetUserMedia || navigator.mediaDevices.msGetUserMedia || navigator.mediaDevices.oGetUserMedia
-                  navigator.mediaDevices.getUserMedia(mediaConfig).then((mediaStream) => {
+                  navigator.mediaDevices.getUserMedia(mediaConfig).then(mediaStream => {
                       this.stream = mediaStream
                       this.element.srcObject = this.stream;
                   })
@@ -71,9 +71,9 @@
               imageSensor: { 
                 element: document.querySelector("#picMeImage"),
                 user: {
-                    name: $rootScope.User.Name,
-                    email: $rootScope.User.Email,
-                    password: 'default'
+                    name: 'defaultName',
+                    email: 'defaultEmail',
+                    password: 'defaultPassword'
                 },
                 image: {
                   title: '',
@@ -90,14 +90,15 @@
             $rootScope.showHeader = false
             vm.picme = vm.InitPicMe()
             vm.picme.videoSensor.getStream()
+            vm.picme.imageSensor.user.name = $location.$$search.name
+            vm.picme.imageSensor.user.email = $location.$$search.email
+            vm.routeListPicMe = '#!/picMe/listPicMe'
         })()
 
-        // Clean up stuff
         $scope.$on('$destroy', () => {
             vm.picme.videoSensor.stopStream()
         })
 
-        // Here your view content is fully loaded !!
         $scope.$on('$viewContentLoaded', () => {
             
         })
