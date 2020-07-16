@@ -3,13 +3,37 @@
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
+    "compounds": [
+        {
+            "name": "Start server and chrome debugger",
+             "configurations": ["Launch Gulp Dev", "Launch Chrome" ]
+        }
+    ],
     "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Gulp Dev",
+            "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
+            "args": ["--dev"]
+        },
         {
             "type": "pwa-chrome",
             "request": "launch",
             "name": "Launch Chrome",
             "url": "http://localhost:3004",
-            "webRoot": "${workspaceFolder}"
+            "webRoot": "${workspaceFolder}",
+            "sourceMaps": true,
+            "runtimeArgs": ["--remote-debugging-port=9222"]
+        },
+        {
+            "name": "Node: Attach",
+            "processId": "${command:PickProcess}",
+            "request": "attach",
+            "skipFiles": ["<node_internals>/**"],
+            "type": "node",
+            "restart": true,
+            "protocol": "inspector"
         }
     ]
 }

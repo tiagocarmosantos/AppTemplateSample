@@ -12,10 +12,18 @@ gulp.task('watch', () => {
 	watch(['./packages/**/*.css', './node_modules/**/*.css'], () => gulp.start(['deps.css', 'deps.fonts']))
 })
 
-gulp.task('server', ['watch'], () => {
+gulp.task('devServer', ['watch'], () => {
 	return gulp.src('public').pipe(webserver({
 		livereload: true,
 		port: 3004,
 		open: true
 	}))
+})
+
+gulp.task('qaServer', () => {
+
+})
+
+gulp.task('prodServer', () => {
+
 })
