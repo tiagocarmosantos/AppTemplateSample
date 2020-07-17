@@ -10,7 +10,7 @@
         vm.picsMe = Array(3).fill({ image: { content: '' }})
 
         vm.listPicMe = () => {
-            picMeAPI.getPicsMe('user.email', $rootScope.User.Email).then(data => { 
+            picMeAPI.getPicsMe('user.email', $rootScope.config.user.Email).then(data => { 
                $scope.$evalAsync(() => { 
                   vm.picsMe = data
                 })
@@ -30,17 +30,17 @@
         }
 
         (function initController() {
-            $rootScope.showHeader = true
-            $rootScope.showFooter = false
-            vm.routeNewPicMe = `#!/picMe/newPicMe?email=${$rootScope.User.Email}`
-            vm.routeNewPicMeAuthUser = `${vm.routeNewPicMe}&name=${$rootScope.User.Name}`
+            $rootScope.config.template.showHeader = true
+            $rootScope.config.template.showFooter = false
+            vm.routeNewPicMe = `#!/picMe/newPicMe?email=${$rootScope.config.user.Email}`
+            vm.routeNewPicMeAuthUser = `${vm.routeNewPicMe}&name=${$rootScope.config.user.Name}`
             vm.showQRCode = false
             vm.listPicMe()
         })()
 
         $scope.$on('$destroy', () => {
-            $rootScope.showHeader = true
-            $rootScope.showFooter = true
+            $rootScope.config.template.showHeader = true
+            $rootScope.config.template.showFooter = true
         })
 
         $scope.$on('$viewContentLoaded', () => {

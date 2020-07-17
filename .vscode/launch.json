@@ -5,35 +5,25 @@
     "version": "0.2.0",
     "compounds": [
         {
-            "name": "Start server and chrome debugger",
-             "configurations": ["Launch Gulp Dev", "Launch Chrome" ]
+            "name": "PWA_DEV",
+             "configurations": ["Build PWA", "Launch PWA" ]
         }
     ],
     "configurations": [
         {
-            "type": "node",
+            "name": "Build PWA",
             "request": "launch",
-            "name": "Launch Gulp Dev",
-            "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
-            "args": ["--dev"]
+            "type": "node-terminal",
+            "command": "npm run dev"
         },
         {
-            "type": "pwa-chrome",
+            "name": "Launch PWA",
             "request": "launch",
-            "name": "Launch Chrome",
+            "type": "pwa-chrome",
             "url": "http://localhost:3004",
-            "webRoot": "${workspaceFolder}",
+            "webRoot": "${workspaceFolder}/public",
             "sourceMaps": true,
             "runtimeArgs": ["--remote-debugging-port=9222"]
         },
-        {
-            "name": "Node: Attach",
-            "processId": "${command:PickProcess}",
-            "request": "attach",
-            "skipFiles": ["<node_internals>/**"],
-            "type": "node",
-            "restart": true,
-            "protocol": "inspector"
-        }
     ]
 }

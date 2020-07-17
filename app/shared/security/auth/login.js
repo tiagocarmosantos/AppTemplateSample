@@ -32,7 +32,7 @@
         }
 
         function initUser () {
-             return $rootScope.User = vm.User = {
+             return $rootScope.config.user = vm.User = {
                 ID: null,
                 Name: null,
                 ImageURL: null,
@@ -45,8 +45,8 @@
 
         (function initController() {
             console.log('Login')
-            $rootScope.showFooter = false
-            $rootScope.showHeader = false
+            $rootScope.config.template.showFooter = false
+            $rootScope.config.template.showHeader = false
 
             document.User = initUser()
 
@@ -56,8 +56,8 @@
         // Clean up stuff
         $scope.$on('$destroy', () => {
             //  TODO SOMETHING
-            $rootScope.showFooter = true
-            $rootScope.showHeader = true
+            $rootScope.config.template.showFooter = true
+            $rootScope.config.template.showHeader = true
         });
 
         // Here your view content is fully loaded !!

@@ -86,8 +86,8 @@
 
         (function initController() {
             console.log('newPicMe')
-            $rootScope.showFooter = false
-            $rootScope.showHeader = false
+            $rootScope.config.template.showFooter = false
+            $rootScope.config.template.showHeader = false
             vm.picme = vm.InitPicMe()
             vm.picme.videoSensor.getStream()
             vm.picme.imageSensor.user.name = $location.$$search.name
@@ -97,8 +97,8 @@
 
         $scope.$on('$destroy', () => {
             vm.picme.videoSensor.stopStream()
-            $rootScope.showFooter = true
-            $rootScope.showHeader = true
+            $rootScope.config.template.showFooter = true
+            $rootScope.config.template.showHeader = true
         })
 
         $scope.$on('$viewContentLoaded', () => {

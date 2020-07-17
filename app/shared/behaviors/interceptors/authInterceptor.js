@@ -8,7 +8,7 @@
 	function authInterceptor($rootScope, $location) {
 		return {
 			request : function (config) {
-				if (!$rootScope.User.Logado) {
+				if (!$rootScope.config.user.Logado) {
 					$location.path("/auth/login")
 				}
 

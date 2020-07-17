@@ -1,6 +1,6 @@
  
  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout__header--waterfall">
-	<header class="android-header mdl-layout__header no-print" ng-show="showHeader">
+	<header class="android-header mdl-layout__header no-print" ng-show="config.template.showHeader">
 		<div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button">
 			<i class="material-icons"></i>
 		</div>
@@ -40,13 +40,13 @@
 				  <li class="mdl-menu__item"><a class="mdl-navigation__link" style="text-decoration: none;" href="#!/ngProgressive/ngProgressive-Table">Table</a></li>
 				  <li class="mdl-menu__item"><a class="mdl-navigation__link" style="text-decoration: none;" href="#!/ngProgressive/ngProgressive-Accordion">Accordion</a></li>
 				  <div class="android-drawer-separator mdl-layout--small-screen-only"></div>
-				  <li class="mdl-menu__item mdl-layout--small-screen-only"><a class="mdl-navigation__link" style="text-decoration: none;" onclick="User.onSignOut()">Sair</a></li>
+				  <li class="mdl-menu__item mdl-layout--small-screen-only"><a class="mdl-navigation__link" style="text-decoration: none;" ng-click="config.user.onSignOut()"></a>>Sair</a></li>
 				</ul>
 				<button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect mdl-layout--large-screen-only" id="demo-menu-lower-exit">
 		        	<i class="material-icons">person</i>
 		      	</button>
 		      	<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-exit">
-				  <li class="mdl-menu__item"><a style="text-decoration: none;" onclick="User.onSignOut()">Sair</a></li>
+				  <li class="mdl-menu__item"><a style="text-decoration: none;" onclick="config.user.onSignOut()" ng-click="config.user.onSignOut()">Sair</a></li>
 				</ul>
 			  </nav>
 		  </div>
@@ -69,7 +69,7 @@
           <a class="mdl-navigation__link" style="text-decoration: none;" href="#!/ngProgressive/ngProgressive-Table">Table</a>
           <a class="mdl-navigation__link" style="text-decoration: none;" href="#!/ngProgressive/ngProgressive-Accordion">Accordion</a>
           <div class="android-drawer-separator"></div>
-		  <button class="btn btn-block btn-primary" style="text-decoration: none;" onclick="User.onSignOut()">Sair</button>
+		  <button class="btn btn-block btn-primary" style="text-decoration: none;" ng-click="config.user.onSignOut()">Sair</button>
 		</nav>
 	</div>
 
@@ -83,6 +83,6 @@
 				<div ng-view=""></div>
 			</div>
 		</div>
-		<div ng-include="'templates/template-01/footer.html'" ng-if="showFooter"></div>
+		<div ng-include="'templates/template-01/footer.html'" ng-if="config.template.showFooter"></div>
 	</main>
 </div>

@@ -10,24 +10,22 @@
 	// Constants are similiars with values, but could be inject in Providers.
 	angular.module("ListaTelefonica").constant("config", {
 		appName: 'NPWA - NgProgressiveWebApp',
-		template: { templateName: 'template-01'},
-		templates: [{ templateName: 'template-01' }, { templateName: 'template-02' }, { templateName: 'template-03' }],
+		template: { templateName: 'template-01', showHeader: true, showFooter: true },
+		templates: [{ templateName: 'template-01', showHeader: true, showFooter: true }, { templateName: 'template-02', showHeader: true, showFooter: true }, { templateName: 'template-03', showHeader: true, showFooter: true }],
 		defaultRoute: '/picMe/listPicMe',
 		previousRoute: '',
 		version: '1.0',
 		owner: 'Tiago Carmo Santos',
 		year: '2018',
 		site: 'https://br.linkedin.com/in/tiagocarmosantos',
-		//apiUrl: 'http://localhost:3003/api',
-		//oapiUrl: 'http://localhost:3003/oapi',
 		apiUrl: 'https://microservice-sample.herokuapp.com/api',
 		oapiUrl: 'https://microservice-sample.herokuapp.com/oapi',
-		userKey: '_lista_telefonica_app_user'
+		userKey: '_lista_telefonica_app_user',
+		user: { ID: null, Name: null, ImageURL: null, Email: null, idToken: null, Logado: false, onSignIn: () => {}, onSignOut: () => {} }
 	}).run(['$rootScope', 'config', function ($rootScope, config) {
+        config.apiUrl = (location.hostname.toLowerCase() == 'localhost' ? 'http://localhost:3003/api' : config.apiUrl)
+        config.oapiUrl = (location.hostname.toLowerCase() == 'localhost' ? 'http://localhost:3003/oapi' : config.oapiUrl)
 		$rootScope.config = config
-		$rootScope.showHeader = true
-		$rootScope.showFooter = true
-		$rootScope.User = { ID: null, Name: null, ImageURL: null, Email: null, idToken: null, Logado: false, onSignIn: () => {}, onSignOut: () => {} }	
 	}])
 	
 })()
