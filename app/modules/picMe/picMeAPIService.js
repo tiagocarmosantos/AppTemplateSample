@@ -7,6 +7,8 @@
 
 	function picMeAPI($http, config) {
 
+		let listPicsMe = Array(3).fill({ image: { content: '' }})
+
 		var _getPicsMe = () => {
 			return $http.get(`${config.oapiUrl}/picMe`).then(response => { 
 				return JSON.parse(JSON.stringify(response.data))
