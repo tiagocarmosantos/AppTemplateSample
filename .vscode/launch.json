@@ -7,6 +7,10 @@
         {
             "name": "PWA_DEV",
              "configurations": ["Build PWA", "Launch PWA" ]
+        },
+        {
+            "name": "PWA_PROD",
+             "configurations": ["Publish PWA"]
         }
     ],
     "configurations": [
@@ -24,6 +28,12 @@
             "webRoot": "${workspaceFolder}/public",
             "sourceMaps": true,
             "runtimeArgs": ["--remote-debugging-port=9222"]
+        },
+        {
+            "name": "Publish PWA",
+            "request": "launch",
+            "type": "node-terminal",
+            "command": "npm run production"
         },
     ]
 }

@@ -10,8 +10,10 @@
   "scripts": {
     "build": "gulp --build",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "CI": "git add . && git commit -m \"Automatic Commit\" && git push origin master",
+    "CD": "git push heroku master",
     "dev": "gulp --dev",
-    "production": "npm run build && git add . && git commit -m \"Automatic Commit\" && git push origin master && git push heroku master"
+    "production": "npm run build && npm run CI && npm run CD"
   },
   "keywords": [],
   "author": "",
