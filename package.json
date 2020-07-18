@@ -8,9 +8,10 @@
     "npm": "4.6.1"
   },
   "scripts": {
+    "build": "gulp --build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "gulp --dev",
-    "production": "gulp --production && git add . && git commit -m \"Automatic Commit\" && git push origin master"
+    "production": "npm run build && git add . && git commit -m \"Automatic Commit\" && git push origin master && git push heroku master"
   },
   "keywords": [],
   "author": "",
