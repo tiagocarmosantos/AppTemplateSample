@@ -16,7 +16,7 @@ gulp.task('devServer', ['watch'], () => {
 	return gulp.src('public').pipe(webserver({
 		livereload: true,
 		port: 3004,
-		open: false
+		open: true
 	}))
 })
 

@@ -40,13 +40,13 @@
 				  <li class="mdl-menu__item"><a class="mdl-navigation__link" style="text-decoration: none;" href="#!/ngProgressive/ngProgressive-Table">Table</a></li>
 				  <li class="mdl-menu__item"><a class="mdl-navigation__link" style="text-decoration: none;" href="#!/ngProgressive/ngProgressive-Accordion">Accordion</a></li>
 				  <div class="android-drawer-separator mdl-layout--small-screen-only"></div>
-				  <li class="mdl-menu__item mdl-layout--small-screen-only"><a class="mdl-navigation__link" style="text-decoration: none;" ng-click="config.user.onSignOut()"></a>>Sair</a></li>
+				  <li class="mdl-menu__item mdl-layout--small-screen-only"><a class="mdl-navigation__link" style="text-decoration: none;" onclick="User.onSignOut()">Sair</a></li>
 				</ul>
 				<button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect mdl-layout--large-screen-only" id="demo-menu-lower-exit">
 		        	<i class="material-icons">person</i>
 		      	</button>
 		      	<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-exit">
-				  <li class="mdl-menu__item"><a style="text-decoration: none;" onclick="config.user.onSignOut()" ng-click="config.user.onSignOut()">Sair</a></li>
+				  <li class="mdl-menu__item"><a style="text-decoration: none;" onclick="User.onSignOut()">Sair</a></li>
 				</ul>
 			  </nav>
 		  </div>
@@ -69,7 +69,7 @@
           <a class="mdl-navigation__link" style="text-decoration: none;" href="#!/ngProgressive/ngProgressive-Table">Table</a>
           <a class="mdl-navigation__link" style="text-decoration: none;" href="#!/ngProgressive/ngProgressive-Accordion">Accordion</a>
           <div class="android-drawer-separator"></div>
-		  <button class="btn btn-block btn-primary" style="text-decoration: none;" ng-click="config.user.onSignOut()">Sair</button>
+		  <a class="mdl-navigation__link" style="text-decoration: none;" onclick="User.onSignOut()">Sair</a>
 		</nav>
 	</div>
 

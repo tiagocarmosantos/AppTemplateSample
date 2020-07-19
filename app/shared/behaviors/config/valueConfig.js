@@ -24,7 +24,7 @@
 		user: { ID: null, Name: null, ImageURL: null, Email: null, idToken: null, Logado: false, onSignIn: () => {}, onSignOut: () => {} }
 	}).run(['$rootScope', 'config', function ($rootScope, config) {
         config.apiUrl = (location.hostname.toLowerCase() == 'localhost' ? 'http://localhost:3003/api' : config.apiUrl)
-        config.oapiUrl = (location.hostname.toLowerCase() == 'localhost' ? 'http://localhost:3003/oapi' : config.oapiUrl)
+		config.oapiUrl = (location.hostname.toLowerCase() == 'localhost' ? 'http://localhost:3003/oapi' : config.oapiUrl)
 		$rootScope.config = config
 	}])
 	

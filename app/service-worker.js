@@ -1,5 +1,5 @@
 (function () {
-	// 2020-07-18:v01.134300
+	// 2020-07-19:v01.184900
 	
  	'use strict';
 
@@ -13,7 +13,9 @@
 	
 
 	self.addEventListener('install', (event) => {
-	  console.log('[ServiceWorker] Install')
+	  	console.log('[ServiceWorker] Install')
+	  	// The promise that skipWaiting() returns can be safely ignored.
+  		self.skipWaiting();
 	});
 
 	self.addEventListener('activate', (event) => {

@@ -8,10 +8,11 @@
 	function authInterceptor($rootScope, $location) {
 		return {
 			request : function (config) {
-				if (!$rootScope.config.user.Logado) {
-					$location.path("/auth/login")
+				if ((config.method.toUpperCase() == 'GET') && (config.url.slice(0, 8) == "/modules")) {
+					if ($rootScope.config.user.Logado == false) {
+						$location.path("/auth/login")
+					}
 				}
-
 				return config
 			}
 		};

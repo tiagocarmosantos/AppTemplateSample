@@ -10,7 +10,7 @@
         vm.picsMe = Array(3).fill( { image: { content: '' }})
 
         vm.listPicMe = () => {
-            var filter = (!!$rootScope.config.user.Email ? { param: 'user.email', value: $rootScope.config.user.Email } : null)
+            var filter = ($rootScope.config.user.Logado ? { param: 'user.email', value: $rootScope.config.user.Email } : null)
             picMeAPI.getPicsMe(filter).then(data => { 
                 $scope.$evalAsync(() => {
                     vm.picsMe = data

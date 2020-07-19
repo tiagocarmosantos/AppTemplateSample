@@ -10,7 +10,7 @@
 			request : function (config) {
 				
 				if ((config.method.toUpperCase() == 'GET') && (config.url.slice(0, 8) == "/modules")) {
-					$rootScope.config.previousRoute = config.url.slice(8).replace('.html', '')
+					$rootScope.config.previousRoute = location.hash.replace('#!', '')
 				}
 
 				return config
