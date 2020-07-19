@@ -3,50 +3,41 @@
 	'use strict';
 	
 	// Factories are similars with Service and Providers.
-	angular.module("ListaTelefonica").factory("picMeAPI", ['$http', 'config', picMeAPI])
+	angular.module("ListaTelefonica").factory("picMeAPI", ['config', picMeAPI])
 
-	function picMeAPI($http, config) {
+	function picMeAPI(config) {
 
-		let listPicsMe = Array(3).fill({ image: { content: '' }})
-
-		var _getPicsMe = () => {
-			return $http.get(`${config.oapiUrl}/picMe`).then(response => { 
-				return JSON.parse(JSON.stringify(response.data))
-			}).catch(error => {
-				throw Error('Aconteceu um problema: Não foi possível carregar os dados!')
-			})
-		}
-
-		var _getPicsMe = (filterParam, filterValue) => {
-			return $http.get(`${config.oapiUrl}/picMe/?filter=${filterParam}:${filterValue}`).then(response => { 
-				return JSON.parse(JSON.stringify(response.data))
-			}).catch(error => {
-				throw Error('Aconteceu um problema: Não foi possível carregar os dados!')
-			})
+		var _getPicsMe = (filter) => {
+			let url = (!!filter ? `${config.oapiUrl}/picMe/?filter=${filter.param}:${filter.value}` : `${config.oapiUrl}/picMe`)
+			return fetch(url)
+			.then(response => { return response.json() })
+			.then(data => { return data })
+			.catch(error => { throw Error(`Error: ${error.message}`) })
 		}
 
 		var _getPicMe = id => {
-			return $http.get(`${config.oapiUrl}/picMe/${id}`).then(response => { 
-				return JSON.parse(JSON.stringify(response.data))
-			}).catch(error => {
-				throw Error('Aconteceu um problema: Não foi possível carregar os dados!')
-			})
+			return fetch(`${config.oapiUrl}/picMe/${id}`)
+			.then(response => { return response.json() })
+			.then(data => { return data })
+			.catch(error => { throw Error(`Error: ${error.message}`) })
 		}
 
 		var _savePicMe = picMe => {
-			return $http.post(`${config.oapiUrl}/picMe`, picMe).then(response => {
-				return JSON.parse(JSON.stringify(response.data))
-			}).catch(error => {
-				throw Error('Aconteceu um problema: Não foi possível salvar os dados!')
+			return fetch(`${config.oapiUrl}/picMe`, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(picMe) 
 			})
+			.then(response => { return response.json() })
+			.then(data => { return data })
+			.catch(error => { throw Error(`Error: ${error.message}`) })
 		}
 
 		var _deletePicMe = id => {
-			return $http.delete(`${config.oapiUrl}/picMe/${id}`).then(response => {
-				return JSON.parse(JSON.stringify(response.data))
-			}).catch(error => {
-				throw Error('Aconteceu um problema: Não foi possível deletar os dados!')
-			})
+			return fetch(`${config.oapiUrl}/picMe/${id}`, { method: 'DELETE' })
+			.then(response => { return response.json() })
+			.then(data => { return data })
+			.catch(error => { throw Error(`Error: ${error.message}`) })
 		}
 
     	var _createFilter = (name, config) => {

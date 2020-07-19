@@ -1,6 +1,6 @@
 <div ng-controller="listPicMeController as lpmCtrl">
   <div id="picMeList" name="PicMeList" class="mdl-grid content-center" ng-show="!lpmCtrl.showQRCode" >
-      <div class="card mdl-cell mdl-cell--12-col-phone mdl-cell--6-col-tablet mdl-cell--4-col-desktop mdl-cell--top border-dark" ng-repeat="picMe in lpmCtrl.picsMe | orderBy : '-image.title' | filter: pesquisarDados track by $index">
+      <div class="card mdl-cell mdl-cell--12-col-phone mdl-cell--6-col-tablet mdl-cell--4-col-desktop mdl-cell--top border-dark" ng-repeat="picMe in lpmCtrl.picsMe | filter: pesquisarDados | orderBy : '-image.title' track by $index">
         <img class="card-img-top img-fluid img-thumbnail" src="{{ picMe.image.content }}">
         <div class="card-body">
           <p class="card-text">{{ picMe.image.title }}</p>

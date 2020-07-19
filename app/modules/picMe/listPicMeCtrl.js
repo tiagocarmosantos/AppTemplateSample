@@ -7,12 +7,13 @@
     function listPicMeController(picMeAPI, $rootScope, $scope, $window, $location, $timeout) { 
 
         const vm = this
-        vm.picsMe = Array(3).fill({ image: { content: '' }})
+        vm.picsMe = Array(3).fill( { image: { content: '' }})
 
         vm.listPicMe = () => {
-            picMeAPI.getPicsMe('user.email', $rootScope.config.user.Email).then(data => { 
-               $scope.$evalAsync(() => { 
-                  vm.picsMe = data
+            var filter = (!!$rootScope.config.user.Email ? { param: 'user.email', value: $rootScope.config.user.Email } : null)
+            picMeAPI.getPicsMe(filter).then(data => { 
+                $scope.$evalAsync(() => {
+                    vm.picsMe = data
                 })
             })
             .catch(error => {
