@@ -21,7 +21,7 @@
 		apiUrl: 'https://microservice-sample.herokuapp.com/api',
 		oapiUrl: 'https://microservice-sample.herokuapp.com/oapi',
 		userKey: '_lista_telefonica_app_user',
-		user: { ID: null, Name: null, ImageURL: null, Email: null, idToken: null, Logado: false, onSignIn: () => {}, onSignOut: () => {} }
+		user: { ID: null, Name: null, ImageURL: null, Email: null, idToken: null, Logado: false, Anonymous: false, onSignIn: () => {}, onSignOut: () => {} }
 	}).run(['$rootScope', 'config', function ($rootScope, config) {
         config.apiUrl = (location.hostname.toLowerCase() == 'localhost' ? 'http://localhost:3003/api' : config.apiUrl)
 		config.oapiUrl = (location.hostname.toLowerCase() == 'localhost' ? 'http://localhost:3003/oapi' : config.oapiUrl)

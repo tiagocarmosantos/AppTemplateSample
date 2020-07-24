@@ -1,5 +1,5 @@
 (function () {
-	// 2020-07-19:v01.184900
+	// 2020-07-23:v01.213400
 	
  	'use strict';
 
@@ -14,13 +14,15 @@
 
 	self.addEventListener('install', (event) => {
 	  	console.log('[ServiceWorker] Install')
-	  	// The promise that skipWaiting() returns can be safely ignored.
-  		self.skipWaiting();
+	  		// The promise that skipWaiting() returns can be safely ignored.
+		  	self.skipWaiting();
+		console.log('[ServiceWorker] skipWaiting')
 	});
 
 	self.addEventListener('activate', (event) => {
 		console.log('[ServiceWorker] Activate')
-	  	event.waitUntil(deleteOfflineData(ngPersist.Config))
+		  	event.waitUntil(deleteOfflineData(ngPersist.Config))
+		 	event.waitUntil(self.clients.claim());
 		console.log('[ServiceWorker] Removing old app data')
 	});
 

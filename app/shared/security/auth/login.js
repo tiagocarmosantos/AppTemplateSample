@@ -38,6 +38,7 @@
                 ImageURL: null,
                 Email: null,
                 Logado: false,
+                Anonymous: false,
                 onSignIn: onSignIn,
                 onSignOut: onSignOut
             }
