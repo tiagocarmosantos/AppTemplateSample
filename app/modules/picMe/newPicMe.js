@@ -2,9 +2,9 @@
     
     'use strict';
 
-    angular.module("ListaTelefonica").controller("newPicMeController", ['picMeAPI', 'mobileNgMsg', '$rootScope', '$scope', '$window', '$location', newPicMeController])
+    angular.module("ListaTelefonica").controller("newPicMeController", ['picMeAPI', 'mobileNgMsg', '$rootScope', '$scope', '$location', 'filterAPI', newPicMeController])
 
-    function newPicMeController(picMeAPI, mobileNgMsg, $rootScope, $scope, $window, $location) { 
+    function newPicMeController(picMeAPI, mobileNgMsg, $rootScope, $scope, $location, filterAPI) { 
 
         const vm = this
 
@@ -46,7 +46,7 @@
                 element: document.querySelector("#picMeCam"),
                 front: false,
                 stream: null,
-                filters: picMeAPI.getFilters(),
+                filters: filterAPI.getFilters(),
                 stopStream: function() {
                   if (this.stream) {
                       this.stream.getTracks().map(track => {

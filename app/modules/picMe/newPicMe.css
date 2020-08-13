@@ -1,0 +1,25 @@
+.newPicListActionsTop {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 2%;
+}
+
+.listFilters {
+	display: grid;
+	justify-items: center;
+	overflow: scroll;
+	scroll-behavior: smooth;
+}
+
+.listFilters ul {
+	display: flex;
+	flex-direction: row;
+}
+
+.newPicListActionsBottom {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 2%;
+}

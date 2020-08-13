@@ -16,6 +16,10 @@ gulp.task('devServer', ['watch'], () => {
 	return gulp.src('public').pipe(webserver({
 		livereload: true,
 		port: 3004,
+		directoryListing: {
+			enable: false,
+			path: 'public/modules/'
+		},
 		open: true
 	}))
 })

@@ -45,6 +45,8 @@ gulp.task('deps.js', () => {
 		 'packages/ngComponents/ngExcel-mobile/jszip.js',
 		 'packages/ngComponents/ngExcel-mobile/xlsx.js',
 		 'packages/ngComponents/ngExcel-mobile/lodash.min.js',
+		 'packages/ngComponents/ngDownload-mobile/ngDownload.js',
+		 'packages/ngComponents/ngMath-mobile/ngMath.js',
 	])
 	//	.pipe(uglify())
 	.pipe(concat('deps.min.js'))

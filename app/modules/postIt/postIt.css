@@ -1,15 +1,11 @@
-.no-print { 
-	display:block; 
-}
-
 @media print {
 
 	.no-print { 
-		display:none; 
+		display:none!important; 
 	}
 
 	nav, footer, video, audio, object, embed { 
-		display:none; 
+		display:none!important; 
 	}
 
 	blockquote {

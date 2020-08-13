@@ -38,10 +38,10 @@
     "jquery": "3.2.1",
     "material-design-icons": "^3.0.1",
     "material-design-lite": "1.3.0",
+    "qrcode": "1.4.4",
     "requirejs": "2.3.6",
     "run-sequence": "2.0.0",
-    "w3-css": "4.1.0",
-    "qrcode": "1.4.4"
+    "w3-css": "4.1.0"
   },
   "devDependencies": {
     "heroku": "^7.0.17",
