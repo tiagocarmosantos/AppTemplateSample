@@ -11,6 +11,12 @@
 	overflow-x: auto;
     overflow-y: hidden;
 	scroll-behavior: smooth;
+  	transition: visibility 0s, opacity 0.5s linear;
+}
+
+.picmeHidden {
+	visibility: hidden;
+    opacity: 0;
 }
 
 .listFilters ul {

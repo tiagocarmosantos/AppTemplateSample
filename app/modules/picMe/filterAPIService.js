@@ -12,7 +12,7 @@
                     name: name,
                     config: config,
                     apply: (element) => {
-                        element.style.filter = `${name}(${config})`
+                        element.style.filter = (!!config ? `${name}(${config})` : name) 
                     }
                   }
       }

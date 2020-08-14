@@ -13,15 +13,17 @@
 		<img id="picMeImage" class="fullscreen hidden"></img>
 	</div>
 	<nav class="actions-bottom bgTransparent">
-		<nav class="listFilters">
+		<nav class="listFilters picmeHidden">
 			<ul class="demo-list-icon mdl-list">
 				<li class="mdl-list__item" ng-repeat="filter in npmCtrl.picme.videoSensor.filters.options | filter: pesquisarDados | orderBy:'$index':true track by $index">
-					<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">{{ filter.name }}</span>
+					<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+						<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white" ng-click="filter.apply(npmCtrl.picme.videoSensor.element)">{{ filter.name | limitTo:1 | uppercase }}</span>
+					</button>
 				</li>
 			</ul>
 		</nav>
 		<nav class="newPicListActionsBottom">
-			<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored md-68" ng-click="npmCtrl.getFilters()">
+			<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored md-68 actionShowFilter" ng-click="npmCtrl.showFilters()">
 				<i class="material-icons md-light md-48">photo_filter</i>
 			</button>
 			<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored md-68" ng-click="npmCtrl.savePicMe()">

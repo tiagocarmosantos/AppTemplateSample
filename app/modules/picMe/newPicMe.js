@@ -8,9 +8,9 @@
 
         const vm = this
 
-        vm.getFilters = () => {
-            console.log('getFilters')
-            vm.picme.videoSensor.filters.random(vm.picme.videoSensor.element)
+        vm.showFilters = () => {
+            console.log('showFilters')
+            document.querySelector('.listFilters').classList.toggle('picmeHidden')
         }
 
         vm.savePicMe = () => {
