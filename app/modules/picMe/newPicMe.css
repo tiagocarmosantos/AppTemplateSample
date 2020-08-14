@@ -8,7 +8,8 @@
 .listFilters {
 	display: grid;
 	justify-items: center;
-	overflow: scroll;
+	overflow-x: auto;
+    overflow-y: hidden;
 	scroll-behavior: smooth;
 }
 

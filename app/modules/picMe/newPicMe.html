@@ -15,32 +15,8 @@
 	<nav class="actions-bottom bgTransparent">
 		<nav class="listFilters">
 			<ul class="demo-list-icon mdl-list">
-				<li class="mdl-list__item">
-					<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">A</span>
-				</li>
-				<li class="mdl-list__item">
-					<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">B</span>
-				</li>
-				<li class="mdl-list__item">
-					<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">C</span>
-				</li>
-				<li class="mdl-list__item">
-					<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">D</span>
-				</li>
-				<li class="mdl-list__item">
-					<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">F</span>
-				</li>
-				<li class="mdl-list__item">
-					<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">E</span>
-				</li>
-				<li class="mdl-list__item">
-					<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">G</span>
-				</li>
-				<li class="mdl-list__item">
-					<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">H</span>
-				</li>
-				<li class="mdl-list__item">
-					<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">I</span>
+				<li class="mdl-list__item" ng-repeat="filter in npmCtrl.picme.videoSensor.filters.options | filter: pesquisarDados | orderBy:'$index':true track by $index">
+					<span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">{{ filter.name }}</span>
 				</li>
 			</ul>
 		</nav>
