@@ -34,15 +34,12 @@
 
         vm.sharePicMe = (picMe) => {
             console.log('sharePicMe')
-            console.log(picMe)
 
             let shareData = {
                 title: picMe.image.title,
                 text: picMe.user.name,
-                url: picMe.image.content
+                files: picMe.image.content
             }
-
-            console.log(shareData)
 
             if (!!navigator.share) {
                 navigator.share(shareData).then((data) => {
@@ -51,13 +48,6 @@
                     console.log(error)
                     mobileNgMsg.addError('ERROR! Ao Compartilhar!') 
                 })
-    
-                // try {
-                //     await navigator.share(shareData)
-                //     mobileNgMsg.addSuccess('PicME Compartilhado!')
-                // } catch(err) {
-                //     mobileNgMsg.addError('ERROR! Ao Compartilhar!')
-                // }
             } else {
                 mobileNgMsg.addError('Share API is not compatible with this device!') 
             }
