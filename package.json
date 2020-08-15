@@ -11,7 +11,7 @@
     "build": "gulp --build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "CI": "git add . && git commit -m \"Automatic Commit\" && git push origin master",
-    "CD": "heroku git:remote -a apptemplate-sample && git push heroku master",
+    "CD": "git push heroku master",
     "dev": "gulp --dev",
     "production": "npm run build && npm run CI && npm run CD"
   },
