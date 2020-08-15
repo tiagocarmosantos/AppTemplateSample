@@ -4,7 +4,7 @@
         <img class="underGridContainer card-img-top img-fluid img-thumbnail" src="{{ picMe.image.content }}">
         <figcaption class="overGridContainer">{{ picMe.image.title }}</figcaption>
         <nav class="gridContainer">
-          <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" ng-click="">
+          <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" ng-click="lpmCtrl.sharePicMe(picMe)">
             <i class="material-icons md-dark">share</i>
           </button>
         </nav>
