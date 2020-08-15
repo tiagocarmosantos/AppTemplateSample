@@ -16,9 +16,12 @@
 		<nav class="listFilters picmeHidden">
 			<ul class="demo-list-icon mdl-list">
 				<li class="mdl-list__item" ng-repeat="filter in npmCtrl.picme.videoSensor.filters.options | filter: pesquisarDados | orderBy:'$index':true track by $index">
-					<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--teal" ng-click="filter.apply(npmCtrl.picme.videoSensor.element)">
+					<button class="hidden mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--teal" ng-click="filter.apply(npmCtrl.picme.videoSensor.element)">
 						{{ filter.name | limitTo:1 | uppercase }}
 					</button>
+					<span class="mdl-chip mdl-color--teal mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="filter.apply(npmCtrl.picme.videoSensor.element)">
+						<span class="mdl-chip__text">{{ filter.name }}</span>
+					</span>
 				</li>
 			</ul>
 		</nav>

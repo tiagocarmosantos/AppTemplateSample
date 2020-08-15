@@ -32,10 +32,10 @@ main {
 	--overGridContainer-Row: 2;
 	--overGridContainer-AlignSelf: end;
 	background: transparent;
-    padding: 10px;
+    padding: 5%;
     color: black;
 	margin: 0 auto;
-	font-weight: 900;
+	font-weight: bolder;
 }
 
 .picMeList nav {
