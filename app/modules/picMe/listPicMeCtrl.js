@@ -35,11 +35,11 @@
         vm.sharePicMe = (picMe) => {
             console.log('sharePicMe')
             console.log(picMe)
-            debugger;
+            
             fetch(picMe.image.content)
             .then(response => response.arrayBuffer())
             .then(arrayBuffer => {
-                let file = new File([arrayBuffer], picMe.image.title,{ type: picMe.image.contentType })
+                let file = new File([arrayBuffer], picMe.image.title, { type: picMe.image.contentType })
 
                 let shareData = {
                     title: picMe.image.title,
