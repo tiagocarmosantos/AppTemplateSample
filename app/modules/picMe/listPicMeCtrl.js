@@ -44,15 +44,15 @@
                 let shareData = {
                     title: picMe.image.title,
                     text: picMe.user.name,
-                    files: [file]
+                    files: picMe.image.content
                 }
     
-                if (!!navigator.share) {
+                if (!!navigator.share && navigator.canShare(shareData)) {
                     navigator.share(shareData).then((data) => {
                         mobileNgMsg.addSuccess('PicME Compartilhado!')
                     }).catch(error => { 
                         console.log(error)
-                        mobileNgMsg.addError('ERROR! Ao Compartilhar!') 
+                        mobileNgMsg.addError(`ERROR! ${error}`) 
                     })
                 } else {
                     mobileNgMsg.addError('Share API is not compatible with this device!') 
