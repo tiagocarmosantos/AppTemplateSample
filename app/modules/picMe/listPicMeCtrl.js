@@ -43,7 +43,6 @@
                 let shareData = {
                     title: picMe.image.title,
                     text: picMe.user.name,
-                    files: [file],
                     url: 'http://www.google.com'
                 }
 
