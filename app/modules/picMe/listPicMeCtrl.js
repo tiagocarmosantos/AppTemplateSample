@@ -35,7 +35,7 @@
         vm.sharePicMe = (picMe) => {
             console.log('sharePicMe')
             console.log(picMe)
-
+            debugger;
             fetch(picMe.image.content)
             .then(response => response.arrayBuffer())
             .then(arrayBuffer => {
