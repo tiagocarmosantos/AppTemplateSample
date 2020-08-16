@@ -34,22 +34,17 @@
 
         vm.sharePicMe = (picMe) => {
             console.log('sharePicMe')
-            console.log(picMe)
             
             fetch(picMe.image.content)
             .then(response => response.blob())
             .then(blob => {
                 let file = new File([blob], picMe.image.title, { type: 'image/png' })
 
-                console.log(file)
-
                 let shareData = {
                     title: picMe.image.title,
                     text: picMe.user.name,
                     files: [file]
                 }
-
-                console.log(shareData)
 
                 if (!!navigator.share) {
                     navigator.share(shareData).then((data) => {
