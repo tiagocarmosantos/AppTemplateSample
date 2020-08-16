@@ -34,6 +34,7 @@
 
         vm.sharePicMe = (picMe) => {
             console.log('sharePicMe')
+            console.log(picMe)
 
             fetch(picMe.image.content)
             .then(response => response.blob())
