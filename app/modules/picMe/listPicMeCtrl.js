@@ -46,7 +46,9 @@
                     text: picMe.user.name,
                     files: [file]
                 }
-    
+
+                console.log(shareData)
+                
                 if (!!navigator.share) {
                     navigator.share(shareData).then((data) => {
                         mobileNgMsg.addSuccess('PicME Compartilhado!')
