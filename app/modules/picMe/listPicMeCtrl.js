@@ -44,10 +44,10 @@
                 let shareData = {
                     title: picMe.image.title,
                     text: picMe.user.name,
-                    files: picMe.image.content
+                    files: [blob]
                 }
     
-                if (!!navigator.share && navigator.canShare(shareData)) {
+                if (!!navigator.share) {
                     navigator.share(shareData).then((data) => {
                         mobileNgMsg.addSuccess('PicME Compartilhado!')
                     }).catch(error => { 
