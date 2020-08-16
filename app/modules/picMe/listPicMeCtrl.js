@@ -38,12 +38,13 @@
             fetch(picMe.image.content)
             .then(response => response.blob())
             .then(blob => {
-                let file = new File([blob], picMe.image.title, { type: 'image/png' })
+                let file = new File([blob], 'imagem.png', { type: 'image/png' })
 
                 let shareData = {
                     title: picMe.image.title,
                     text: picMe.user.name,
-                    files: [file]
+                    files: [file],
+                    url: 'http://www.google.com'
                 }
 
                 if (!!navigator.share) {
