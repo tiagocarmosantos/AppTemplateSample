@@ -37,14 +37,14 @@
             console.log(picMe)
 
             fetch(picMe.image.content)
-            .then(response => response.blob())
-            .then(blob => {
-                let file = new File([blob], picMe.image.title,{ type: picMe.image.contentType })
+            .then(response => response.arrayBuffer())
+            .then(arrayBuffer => {
+                let file = new File([arrayBuffer], picMe.image.title,{ type: picMe.image.contentType })
 
                 let shareData = {
                     title: picMe.image.title,
                     text: picMe.user.name,
-                    files: [blob]
+                    files: [file]
                 }
     
                 if (!!navigator.share) {
