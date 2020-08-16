@@ -39,7 +39,7 @@
             fetch(picMe.image.content)
             .then(response => response.blob())
             .then(blob => {
-                let file = new File([blob], picMe.image.title, { type: picMe.image.contentType })
+                let file = new File([blob], picMe.image.title, { type: 'image/png' })
 
                 console.log(file)
 
