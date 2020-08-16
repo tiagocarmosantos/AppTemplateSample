@@ -13,7 +13,7 @@
     "CI": "git add . && git commit -m \"Automatic Commit\" && git push origin master",
     "CD": "git push heroku master",
     "dev": "gulp --dev",
-    "production": "npm run build && npm run CI && npm run CD"
+    "production": "npm run build && npm run CI"
   },
   "keywords": [],
   "author": "",

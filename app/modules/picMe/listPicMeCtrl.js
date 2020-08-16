@@ -41,6 +41,8 @@
             .then(arrayBuffer => {
                 let file = new File([arrayBuffer], picMe.image.title, { type: picMe.image.contentType })
 
+                console.log(file)
+
                 let shareData = {
                     title: picMe.image.title,
                     text: picMe.user.name,
@@ -48,7 +50,7 @@
                 }
 
                 console.log(shareData)
-                
+
                 if (!!navigator.share) {
                     navigator.share(shareData).then((data) => {
                         mobileNgMsg.addSuccess('PicME Compartilhado!')
