@@ -43,7 +43,7 @@
                 let shareData = {
                     title: picMe.image.title,
                     text: picMe.user.name,
-                    url: 'http://www.google.com'
+                    url: URL.createObjectURL(blob)
                 }
 
                 if (!!navigator.share) {
