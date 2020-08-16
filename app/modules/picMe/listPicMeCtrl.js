@@ -37,9 +37,9 @@
             console.log(picMe)
             
             fetch(picMe.image.content)
-            .then(response => response.arrayBuffer())
-            .then(arrayBuffer => {
-                let file = new File([arrayBuffer], picMe.image.title, { type: picMe.image.contentType })
+            .then(response => response.blob())
+            .then(blob => {
+                let file = new File([blob], picMe.image.title, { type: picMe.image.contentType })
 
                 console.log(file)
 
