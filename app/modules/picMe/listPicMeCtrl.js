@@ -43,8 +43,11 @@
                 let shareData = {
                     title: picMe.image.title,
                     text: picMe.user.name,
+                    files: [file],
                     url: URL.createObjectURL(blob)
                 }
+
+                console.log(shareData.url)
 
                 if (!!navigator.share) {
                     navigator.share(shareData).then((data) => {
