@@ -9,7 +9,8 @@
 
 	// Constants are similiars with values, but could be inject in Providers.
 	angular.module("ListaTelefonica").constant("config", {
-		appName: 'NPWA - NgProgressiveWebApp',
+		appName: 'NgProgressiveWebApp',
+		appHome: window.location.origin,
 		template: { templateName: 'template-01', showHeader: true, showFooter: true },
 		templates: [{ templateName: 'template-01', showHeader: true, showFooter: true }, { templateName: 'template-02', showHeader: true, showFooter: true }, { templateName: 'template-03', showHeader: true, showFooter: true }],
 		defaultRoute: '/picMe/listPicMe',
