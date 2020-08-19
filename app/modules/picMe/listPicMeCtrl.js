@@ -38,7 +38,7 @@
             fetch(picMe.image.content)
             .then(response => response.blob())
             .then(blob => {
-                let file = new File([blob], picMe.image.title, { type: 'image/png' })
+                let file = new File([blob], `${picMe.image.title}.png`, { type: 'image/png' })
 
                 let shareData = {
                     text: `${config.appName} - ${picMe.user.name}`,
