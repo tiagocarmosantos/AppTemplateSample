@@ -41,7 +41,7 @@
                 let file = new File([blob], 'image.png', { type: picMe.image.contentType })
 
                 let shareData = {
-                    text: `${config.appName} - ${picMe.user.name}`,
+                    text: `${config.appName} - ${config.user.Name}`,
                     title: picMe.image.title,
                     files: [file],
                     url: config.appHome
