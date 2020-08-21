@@ -17,6 +17,7 @@
             console.log('savePicMe')
             vm.picme.canvasSensor.element.width = vm.picme.videoSensor.element.videoWidth
             vm.picme.canvasSensor.element.height = vm.picme.videoSensor.element.videoHeight
+            vm.picme.canvasSensor.element.getContext('2d').filter = vm.picme.videoSensor.element.style.filter
             vm.picme.canvasSensor.element.getContext('2d').drawImage(vm.picme.videoSensor.element, 0, 0)
 
             vm.picme.imageSensor.image.title = new Date().toLocaleString()
