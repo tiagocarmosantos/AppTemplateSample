@@ -45,7 +45,6 @@
     "w3-css": "4.1.0"
   },
   "devDependencies": {
-    "heroku": "^7.0.17",
     "babel-core": "6.26.0",
     "babel-preset-env": "1.6.0",
     "gulp": "3.9.1",
@@ -57,7 +56,8 @@
     "gulp-uglifycss": "1.0.8",
     "gulp-util": "3.0.8",
     "gulp-watch": "4.3.11",
-    "gulp-webserver": "0.9.1",
+    "gulp-webserver": "^0.9.1",
+    "heroku": "^7.0.17",
     "json-server": "0.12.2"
   }
 }

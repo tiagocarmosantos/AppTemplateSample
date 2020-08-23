@@ -16,10 +16,6 @@ gulp.task('devServer', ['watch'], () => {
 	return gulp.src('public').pipe(webserver({
 		livereload: true,
 		port: 3004,
-		directoryListing: {
-			enable: false,
-			path: 'public/modules/'
-		},
 		open: true
 	}))
 })
@@ -30,4 +26,15 @@ gulp.task('qaServer', () => {
 
 gulp.task('prodServer', () => {
 
+})
+
+gulp.task('modulesServer', ['watch'], () => {
+	return gulp.src('public').pipe(webserver({
+		directoryListing: {
+			enable: true,
+			path: 'public/modules/'
+		},
+		port: 3005,
+		open: false
+	}))
 })
