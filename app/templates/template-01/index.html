@@ -6,8 +6,8 @@
 		</div>
 		<div class="mdl-layout-icon"></div>
 		<div class="mdl-layout__header-row">
-		  <span class="mdl-layout__title mdl-layout--large-screen-only" style="color:gray;">ngProgressive</span>
-		  <span class="mdl-layout__title mdl-layout--small-screen-only" style="color:gray;">ngP</span>
+		  <span class="mdl-layout__title mdl-layout--large-screen-only" style="color:gray;">{{ config.appName }}</span>
+		  <span class="mdl-layout__title mdl-layout--small-screen-only" style="color:gray;">{{ config.appInitials }}</span>
   		  <select class="form-control col-md-4" style="width: 36%;" ng-model="config.template" ng-options="t.templateName for t in config.templates | orderBy:'templateName'" hidden>
 		  </select>
 		  <div class="android-header-spacer mdl-layout-spacer"></div>
@@ -21,12 +21,12 @@
           </div>
           <div class="android-navigation-container">
 			  <nav class="android-navigation mdl-navigation">
-				<a class="mdl-navigation__link mdl-typography--text-uppercase mdl-layout--large-screen-only"  style="text-decoration: none;" ng-repeat="module in config.appModules.modules | orderBy:'$index':false track by $index" ng-href="{{ module.index }}">{{ module.name | capitalize }}</a>
+				<a class="mdl-navigation__link mdl-typography--text-uppercase mdl-layout--large-screen-only"  style="text-decoration: none;" ng-repeat="module in config.appModules.modules | orderBy:'$index':false track by $index" ng-href="{{ module.path }}">{{ module.name | capitalize }}</a>
 			    <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect mdl-layout--small-screen-only" id="demo-menu-lower-right">
 		        	<i class="material-icons">more_vert</i>
 		      	</button>
 			    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect mdl-layout--small-screen-only" for="demo-menu-lower-right">
-				  <li class="mdl-menu__item mdl-layout--small-screen-only" ng-repeat="module in config.appModules.modules | orderBy:'$index':false track by $index"><a class="mdl-navigation__link" style="text-decoration: none;" ng-href="{{ module.index }}">{{ module.name | capitalize }}</a></li>
+				  <li class="mdl-menu__item mdl-layout--small-screen-only" ng-repeat="module in config.appModules.modules | orderBy:'$index':false track by $index"><a class="mdl-navigation__link" style="text-decoration: none;" ng-href="{{ module.path }}">{{ module.name | capitalize }}</a></li>
 				  <div class="android-drawer-separator mdl-layout--small-screen-only"></div>
 				  <li class="mdl-menu__item mdl-layout--small-screen-only"><a class="mdl-navigation__link" style="text-decoration: none;" onclick="User.onSignOut()">Sair</a></li>
 				</ul>
@@ -46,7 +46,7 @@
 	  		<img src="shared/styles/images/angularjs-192.png" />
         </span>
 		<nav class="mdl-navigation">
-		  <a class="mdl-navigation__link" style="text-decoration: none;" ng-repeat="module in config.appModules.modules | orderBy:'$index':false track by $index" ng-href="{{ module.index }}">{{ module.name | capitalize }}</a>
+		  <a class="mdl-navigation__link" style="text-decoration: none;" ng-repeat="module in config.appModules.modules | orderBy:'$index':false track by $index" ng-href="{{ module.path }}">{{ module.name | capitalize }}</a>
           <div class="android-drawer-separator"></div>
 		  <a class="mdl-navigation__link" style="text-decoration: none;" onclick="User.onSignOut()">Sair</a>
 		</nav>

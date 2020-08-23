@@ -16,7 +16,7 @@
 					   ) 
 			}
 		}).otherwise({
-	        redirectTo: `/picMe/listPicMe`
+	        redirectTo: `/picMe/picMe`
 	    });
 
 	}

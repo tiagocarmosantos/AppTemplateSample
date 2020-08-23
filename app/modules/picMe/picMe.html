@@ -1,4 +1,4 @@
-<section id="listPicMeController" name="ListPicMeController" ng-controller="listPicMeController as lpmCtrl" class="listPicMeController">
+<section id="listPicMeController" name="ListPicMeController" ng-controller="picMeController as lpmCtrl" class="listPicMeController">
   <article id="picMeList" name="PicMeList" class="gridContainer picMeList" ng-show="!lpmCtrl.showQRCode" >
       <figure class="gridContainer card" ng-repeat="picMe in lpmCtrl.picsMe | filter: pesquisarDados | orderBy:'$index':true track by $index">
         <img class="underGridContainer card-img-top img-fluid img-thumbnail" src="{{ picMe.image.content }}">

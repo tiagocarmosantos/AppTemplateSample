@@ -93,7 +93,7 @@
             vm.picme.videoSensor.getStream()
             vm.picme.imageSensor.user.name = $location.$$search.name
             vm.picme.imageSensor.user.email = $location.$$search.email
-            vm.routeListPicMe = '#!/picMe/listPicMe'
+            vm.routeListPicMe = '#!/picMe/picMe'
         })()
 
         $scope.$on('$destroy', () => {

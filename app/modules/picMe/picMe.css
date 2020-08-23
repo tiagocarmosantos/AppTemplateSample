@@ -1,11 +1,7 @@
-main {
-	overflow: hidden!important;
-}
-
 .listPicMeController {
 	background-color: lightslategray;
 	height: 90vh;
-	overflow: scroll;
+	overflow: scroll!important;
 }
 
 .picMeList.gridContainer {

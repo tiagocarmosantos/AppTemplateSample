@@ -189,3 +189,7 @@ hr{
     grid-row: var(--overGridContainer-Row);
     align-self: var(--overGridContainer-AlignSelf);
 }
+
+main {
+	overflow: hidden!important;
+}

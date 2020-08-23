@@ -1,0 +1,6 @@
+.listContacts{
+    height: 100vh;
+    overflow: scroll!important;
+    display: flex;
+    flex-direction: column;
+}
