@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 2020-08-23:v01.1936
+# 1598396715029
 
 # Explicitly cached 'master entries'.
 CACHE:
@@ -30,7 +30,6 @@ CACHE:
 
 # Resources that require the user to be online.
 NETWORK:
-http://localhost:3000/contatos
 
 # static.html will be served if main.py is inaccessible
 # offline.jpg will be served in place of all images in images/large/

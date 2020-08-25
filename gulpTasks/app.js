@@ -1,6 +1,7 @@
 const fs = require('fs')
 var path = require('path')
 const gulp = require('gulp')
+var replace = require('gulp-replace')
 const babel = require('gulp-babel')
 const htmlmin = require('gulp-htmlmin')
 const uglify = require('gulp-uglify')
@@ -52,12 +53,16 @@ gulp.task('app.images', () => {
 })
 
 gulp.task('app.manifest', () => {
+	var versionAssets = new Date().getTime().toString()
+	
 	return gulp.src([
 		'app/*.json',
 		'app/*.appcache',
 		'app/*.ico',
 		'app/service-worker.js'
 	])
+	.pipe(replace(/# [0-9]{13}/gs, `# ${versionAssets}`))
+	.pipe(replace(/\/\/ [0-9]{13}/gs, `// ${versionAssets}`))
 	.pipe(gulp.dest('public'))
 })
 
@@ -67,6 +72,6 @@ gulp.task('app.appConfig', () => {
 	let modulesFolder = getFolders(appDirectoryModules)
 	let modulesConfig = { modules: modulesFolder.map(item => { return { name: item, path: `#!/${item}/${item}`, index: `#!/${item}/index` } }) }
 	
-	fs.writeFileSync(`public/modulesConfig.json`, JSON.stringify(modulesConfig))
+	fs.writeFileSync(`public/appConfig.json`, JSON.stringify(modulesConfig))
 })
 

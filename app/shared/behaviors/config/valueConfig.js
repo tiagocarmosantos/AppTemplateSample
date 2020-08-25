@@ -27,7 +27,12 @@
 		user: { ID: null, Name: null, ImageURL: null, Email: null, idToken: null, Logado: false, Anonymous: false, onSignIn: () => {}, onSignOut: () => {} }
 	}).run(['$rootScope', 'config', function ($rootScope, config) {
 
-		fetch(`${window.location.origin}/modulesConfig.json`)
+		let jsonConfigString = jsonStringify(config)
+		console.log(jsonConfigString)
+		let jsonConfig = jsonParse(jsonConfigString)
+		console.log(jsonConfig)
+
+		fetch(`${window.location.origin}/appConfig.json`)
 			.then(response => response.json())
 			.then(data => { config.appModules = data })
 
