@@ -1,18 +1,18 @@
 {
     "appName": "NgProgressiveWebApp",
     "appInitials": "NgP",
-    "appHome": "window.location.origin",
+    "appHome": { "url":"", "getAppHome": "{\"function\":{\"arguments\":\"\",\"body\":\"\\n\\t\\t\\t\\treturn window.location.origin;\\n\\t\\t\\t\"}}" },
     "appModules": [],
     "template": { "templateName": "template-01", "showHeader": true, "showFooter": true },
-    "templates": [{ "templateName": "template-01", "showHeader": true, "showFooter": true }, { "templateName": "template-02", "showHeader": true, "showFooter": true }, { "templateName": "template-03", "showHeader": true, "showFooter": true }],
+    "templates": [{ "templateName": "template-01", "showHeader": true, "showFooter": true }, { "templateName": "template-02", "showHeader":true, "showFooter":true }, { "templateName": "template-03", "showHeader": true, "showFooter": true }],
     "defaultRoute": "/picMe/picMe",
     "previousRoute": "",
     "version": "1.0",
     "owner": "Tiago Carmo Santos",
     "year": "2018",
     "site": "https://br.linkedin.com/in/tiagocarmosantos",
-    "apiUrl": "(location.hostname.toLowerCase() == 'localhost' ? 'http://localhost:3003/api' : 'https://microservice-sample.herokuapp.com/api')",
-    "oapiUrl": "(location.hostname.toLowerCase() == 'localhost' ? 'http://localhost:3003/oapi' : 'https://microservice-sample.herokuapp.com/oapi')",
+    "apiUrl": { "url": "https://microservice-sample.herokuapp.com/api", "apiPort": "3003", "getApiUrl": "{\"function\":{\"arguments\":\"\",\"body\":\"\\n\\t\\t\\t\\treturn location.hostname.toLowerCase() == 'localhost' ? \\\"http://localhost:\\\" + this.apiPort + \\\"/api\\\" : this.url;\\n\\t\\t\\t\"}}" },
+    "oapiUrl": { "url": "https://microservice-sample.herokuapp.com/oapi", "apiPort": "3003", "getOApiUrl": "{\"function\":{\"arguments\":\"\",\"body\":\"\\n\\t\\t\\t\\treturn location.hostname.toLowerCase() == 'localhost' ? \\\"http://localhost:\\\" + this.apiPort + \\\"/oapi\\\" : this.url;\\n\\t\\t\\t\"}}" },
     "userKey": "_lista_telefonica_app_user",
-    "user": { "ID": null, "Name": null, "ImageURL": null, "Email": null, "idToken": null, "Logado": false, "Anonymous": false, "onSignIn": "() => {}", "onSignOut": "() => {}" }
+    "user": { "ID": null, "Name": null, "ImageURL": null, "Email": null, "idToken": null, "Logado": false, "Anonymous": false, "onSignIn": "{\"function\":{\"arguments\":\"\",\"body\":\"\"}}", "onSignOut": "{\"function\":{\"arguments\":\"\",\"body\":\"\"}}" }
 }

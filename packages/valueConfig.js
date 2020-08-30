@@ -11,7 +11,7 @@
 		appName: "NgProgressiveWebApp",
 		appInitials: "NgP",
 		appHome: { url: "", getAppHome: function() { return window.location.origin } },
-		appModules: [{"name":"contatos","path":"#!/contatos/contatos","index":"#!/contatos/index"},{"name":"memeMaker","path":"#!/memeMaker/memeMaker","index":"#!/memeMaker/index"},{"name":"ngMap","path":"#!/ngMap/ngMap","index":"#!/ngMap/index"},{"name":"ngProgressive","path":"#!/ngProgressive/ngProgressive","index":"#!/ngProgressive/index"},{"name":"picMe","path":"#!/picMe/picMe","index":"#!/picMe/index"},{"name":"postIt","path":"#!/postIt/postIt","index":"#!/postIt/index"},{"name":"quickMenu","path":"#!/quickMenu/quickMenu","index":"#!/quickMenu/index"}],
+		appModules: [appModulesDynamic],
 		template: { templateName: "template-01", showHeader: true, showFooter: true },
 		templates: [{ templateName: "template-01", showHeader: true, showFooter: true }, { templateName: "template-02", showHeader: true, showFooter: true }, { templateName: "template-03", showHeader: true, showFooter: true }],
 		defaultRoute: "/picMe/picMe",

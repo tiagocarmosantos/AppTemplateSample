@@ -8,7 +8,7 @@
 	function operadorasAPI($http, config) {
 		
 		this.getOperadoras = function() {
-			return $http.get(config.oapiUrl + "/operadoras").then(function (data) { 
+			return $http.get(config.oapiUrl.getOApiUrl() + "/operadoras").then(function (data) { 
 				return JSON.parse(JSON.stringify(data.data));
 			});
 		};

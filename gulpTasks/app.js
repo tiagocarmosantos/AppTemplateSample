@@ -8,14 +8,7 @@ const uglify = require('gulp-uglify')
 const uglifycss = require('gulp-uglifycss')
 const concat = require('gulp-concat')
 
-gulp.task('app', ['app.html', 'app.css', 'app.js', 'app.images', 'app.manifest', 'app.appConfig'])
-
-function getFolders(dir) {
-    return fs.readdirSync(dir)
-      .filter(function(file) {
-        return fs.statSync(path.join(dir, file)).isDirectory();
-      });
-}
+gulp.task('app', ['app.appConfig', 'app.html', 'app.css', 'app.js', 'app.images', 'app.manifest'])
 
 gulp.task('app.html', () => {
 	return gulp.src([
@@ -67,11 +60,22 @@ gulp.task('app.manifest', () => {
 })
 
 gulp.task('app.appConfig', () => {
+
+	function getFolders(dir) {
+		return fs.readdirSync(dir)
+		  .filter(function(file) {
+			return fs.statSync(path.join(dir, file)).isDirectory();
+		});
+	}
+
 	let appDirectoryModules = 'app/modules'
-	let publicDirectoryModules = 'public/modules'
-	let modulesFolder = getFolders(appDirectoryModules)
-	let modulesConfig = { modules: modulesFolder.map(item => { return { name: item, path: `#!/${item}/${item}`, index: `#!/${item}/index` } }) }
-	
-	fs.writeFileSync(`public/appConfig.json`, JSON.stringify(modulesConfig))
+	let folderModules = getFolders(appDirectoryModules)
+	let appModules = folderModules.map(item => { return { name: item, path: `#!/${item}/${item}`, index: `#!/${item}/index` } })
+
+	return gulp.src([
+		'packages/valueConfig.js'
+	])
+	.pipe(replace("[appModulesDynamic]", JSON.stringify(appModules)))
+	.pipe(gulp.dest('app/shared/behaviors/config'))
 })
 

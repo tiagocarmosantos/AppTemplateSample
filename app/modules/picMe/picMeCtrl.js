@@ -26,7 +26,7 @@
         vm.qrCodePicMe = () => {
           console.log('qrCodePicMe')
           var canvas = document.querySelector("#picMeQRCode canvas")
-          var routeNewPicMeAnonymousUser = `${config.appHome}${vm.routeNewPicMe}&name=Anonymous`
+          var routeNewPicMeAnonymousUser = `${config.appHome.getAppHome()}${vm.routeNewPicMe}&name=Anonymous`
 
           QRCode.toCanvas(canvas, routeNewPicMeAnonymousUser)
           vm.showQRCode = !vm.showQRCode
@@ -44,7 +44,7 @@
                     text: `${config.appName} - ${config.user.Name}`,
                     title: picMe.image.title,
                     files: [file],
-                    url: config.appHome
+                    url: config.appHome.getAppHome()
                 }
 
                 if (!!navigator.share) {

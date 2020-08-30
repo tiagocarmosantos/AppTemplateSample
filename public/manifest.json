@@ -1,6 +1,10 @@
 {
   "name": "ngProgressive",
   "short_name": "ngProgressive",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#258754",
+  "theme_color": "#31af6e",
   "icons": [{
     "src": "shared/styles/images/angularjs.png",
     "sizes": "128x128",
@@ -21,9 +25,5 @@
     "src": "shared/styles/images/angularjs-256.png",
     "sizes": "256x256",
     "type": "image/png"
-  }],
-  "start_url": "index.html",
-  "display": "standalone",
-  "background_color": "#258754",
-  "theme_color": "#31af6e"
+  }]
 }
