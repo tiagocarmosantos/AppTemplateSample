@@ -2,7 +2,7 @@
     
     'use strict';
 
-    angular.module("ListaTelefonica").controller("MemeMakerController", ['$scope', '$timeout', MemeMakerController])
+    angular.module("AppTemplate").controller("MemeMakerController", ['$scope', '$timeout', MemeMakerController])
 
     function MemeMakerController($scope, $timeout) { 
 

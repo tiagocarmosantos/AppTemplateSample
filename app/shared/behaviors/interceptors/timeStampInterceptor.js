@@ -3,7 +3,7 @@
 	'use strict';
 
 	// This interceptor it is used to by pass on browser's cache.
-	angular.module("ListaTelefonica").factory('timeStampInterceptor', [timeStampInterceptor])
+	angular.module("AppTemplate").factory('timeStampInterceptor', [timeStampInterceptor])
 
 	function timeStampInterceptor(){
 		return {

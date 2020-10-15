@@ -3,12 +3,12 @@
 	'use strict';
 
 	// Services are similars with Factories and Providers.
-	angular.module("ListaTelefonica").service("operadorasAPI", ['$http', 'config', operadorasAPI])
+	angular.module("AppTemplate").service("operadorasAPI", ['$http', '$rootScope', operadorasAPI])
 
-	function operadorasAPI($http, config) {
+	function operadorasAPI($http, $rootScope) {
 		
 		this.getOperadoras = function() {
-			return $http.get(config.oapiUrl.getOApiUrl() + "/operadoras").then(function (data) { 
+			return $http.get($rootScope.config.oapiUrl.getOApiUrl() + "/operadoras").then(function (data) { 
 				return JSON.parse(JSON.stringify(data.data));
 			});
 		};

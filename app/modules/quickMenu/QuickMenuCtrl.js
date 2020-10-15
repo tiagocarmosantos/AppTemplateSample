@@ -2,7 +2,7 @@
     
     'use strict';
 
-    angular.module("ListaTelefonica").controller("QuickMenuController", ['quickMenuAPI', 'imageGenerator', 'IAGenerator', 'mobileNgMsg', '$rootScope', '$scope', '$window', QuickMenuController])
+    angular.module("AppTemplate").controller("QuickMenuController", ['quickMenuAPI', 'imageGenerator', 'IAGenerator', 'mobileNgMsg', '$rootScope', '$scope', '$window', QuickMenuController])
 
     function QuickMenuController(quickMenuAPI, imageGenerator, IAGenerator, mobileNgMsg, $rootScope, $scope, $window) { 
 

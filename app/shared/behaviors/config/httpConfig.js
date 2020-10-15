@@ -2,7 +2,7 @@
 	
 	'use strict';
 
-	angular.module("ListaTelefonica").config(['$httpProvider', httpConfig])
+	angular.module("AppTemplate").config(['$httpProvider', httpConfig])
 
 	function httpConfig($httpProvider) {
 		$httpProvider.defaults.cache = true;

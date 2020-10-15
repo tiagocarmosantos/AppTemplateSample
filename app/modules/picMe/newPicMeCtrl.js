@@ -2,7 +2,7 @@
     
     'use strict';
 
-    angular.module("ListaTelefonica").controller("newPicMeController", ['picMeAPI', 'mobileNgMsg', '$rootScope', '$scope', '$location', 'filterAPI', newPicMeController])
+    angular.module("AppTemplate").controller("newPicMeController", ['picMeAPI', 'mobileNgMsg', '$rootScope', '$scope', '$location', 'filterAPI', newPicMeController])
 
     function newPicMeController(picMeAPI, mobileNgMsg, $rootScope, $scope, $location, filterAPI) { 
 

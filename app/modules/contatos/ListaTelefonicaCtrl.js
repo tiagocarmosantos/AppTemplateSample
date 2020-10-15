@@ -2,14 +2,14 @@
     
     'use strict';
 
-    angular.module("ListaTelefonica").controller("ListaTelefonicaController", ['$rootScope', '$scope', '$timeout', 'contatosAPI', 'serialGenerator', ListaTelefonicaController])
+    angular.module("AppTemplate").controller("ListaTelefonicaController", ['$rootScope', '$scope', '$timeout', 'contatosAPI', 'serialGenerator', ListaTelefonicaController])
 
     function ListaTelefonicaController($rootScope, $scope, $timeout, contatosAPI, serialGenerator) { 
         
         $scope.app = "Lista Telefônica";
         $scope.contatos = [];
 
-        contatosAPI.getContatosInScope().then((contatos) => {
+        contatosAPI.getContatos().then((contatos) => {
             $scope.contatos =  contatos;
 
             $scope.contatosNgTable = {

@@ -3,7 +3,7 @@
 	'use strict';
 	
 	// Factories are similars with Service and Providers.
-	angular.module("ListaTelefonica").factory("filterAPI", ['mobileNgMath', filterAPI])
+	angular.module("AppTemplate").factory("filterAPI", ['mobileNgMath', filterAPI])
 
 	function filterAPI(mobileNgMath) {
 

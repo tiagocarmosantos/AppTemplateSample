@@ -2,7 +2,7 @@
 	
 	'use strict';
 
-	angular.module("ListaTelefonica").config(['$routeProvider', 'config', routeConfig])
+	angular.module("AppTemplate").config(['$routeProvider', 'config', routeConfig])
 
 	function routeConfig($routeProvider, config) {
 
@@ -16,7 +16,7 @@
 					   ) 
 			}
 		}).otherwise({
-	        redirectTo: `/picMe/picMe`
+	        redirectTo: `/contatos/contatos`
 	    });
 
 	}

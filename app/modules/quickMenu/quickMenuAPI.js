@@ -3,12 +3,12 @@
 	'use strict';
 	
 	// Factories are similars with Service and Providers.
-	angular.module("ListaTelefonica").factory("quickMenuAPI", ['$http', 'config', quickMenuAPI])
+	angular.module("AppTemplate").factory("quickMenuAPI", ['$http', '$rootScope', quickMenuAPI])
 
-	function quickMenuAPI($http, config) {
+	function quickMenuAPI($http, $rootScope) {
 
 		var _getQuickMenus = () => {
-			return $http.get(`${config.oapiUrl.getOApiUrl()}/quickMenu`).then(response => { 
+			return $http.get(`${$rootScope.config.oapiUrl.getOApiUrl()}/quickMenu`).then(response => { 
 				return JSON.parse(JSON.stringify(response.data))
 			}).catch(error => {
 				throw Error('Aconteceu um problema: Não foi possível carregar os dados!')
@@ -16,7 +16,7 @@
 		};
 
 		var _getQuickMenu = id => {
-			return $http.get(`${config.oapiUrl.getOApiUrl()}/quickMenu/${id}`).then(response => { 
+			return $http.get(`${$rootScope.config.oapiUrl.getOApiUrl()}/quickMenu/${id}`).then(response => { 
 				return JSON.parse(JSON.stringify(response.data))
 			}).catch(error => {
 				throw Error('Aconteceu um problema: Não foi possível carregar os dados!')
@@ -24,7 +24,7 @@
 		};
 
 		var _saveQuickMenu = quickMenu => {
-			return $http.post(`${config.oapiUrl.getOApiUrl()}/quickMenu`, quickMenu).then(response => {
+			return $http.post(`${$rootScope.config.oapiUrl.getOApiUrl()}/quickMenu`, quickMenu).then(response => {
 				return JSON.parse(JSON.stringify(response.data))
 			}).catch(error => {
 				throw Error('Aconteceu um problema: Não foi possível salvar os dados!')
@@ -32,7 +32,7 @@
 		};
 
 		var _deleteQuickMenu = id => {
-			return $http.delete(`${config.oapiUrl.getOApiUrl()}/quickMenu/${id}`).then(response => {
+			return $http.delete(`${$rootScope.config.oapiUrl.getOApiUrl()}/quickMenu/${id}`).then(response => {
 				return JSON.parse(JSON.stringify(response.data))
 			}).catch(error => {
 				throw Error('Aconteceu um problema: Não foi possível deletar os dados!')

@@ -2,7 +2,7 @@
 	
 	'use strict';
 
-	angular.module("ListaTelefonica").factory('loadingInterceptor', ['$q', '$rootScope', '$timeout', loadingInterceptor])
+	angular.module("AppTemplate").factory('loadingInterceptor', ['$q', '$rootScope', '$timeout', loadingInterceptor])
 
 	function loadingInterceptor($q, $rootScope, $timeout){
 		return {

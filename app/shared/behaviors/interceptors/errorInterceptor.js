@@ -2,7 +2,7 @@
 	
 	'use strict';
 
-	angular.module("ListaTelefonica").factory('errorInterceptor', ['$q', '$location', errorInterceptor])
+	angular.module("AppTemplate").factory('errorInterceptor', ['$q', '$location', errorInterceptor])
 
 	function errorInterceptor($q, $location){
 		return {

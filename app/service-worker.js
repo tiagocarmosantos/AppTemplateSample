@@ -6,7 +6,7 @@
 	self.importScripts('./shared/behaviors/deps.persist.js')
 	
 	var ngPersist = getNgPersist()
-	ngPersist.Config.appDataName = 'appData_AngularTest'
+	ngPersist.Config.appDataName = 'appDataNameDynamic'
 	ngPersist.Config.staticTypes = ['document', 'manifest', 'script', 'style', 'image', 'font']
 	ngPersist.Config.dynamicTypes = ['json']
 	ngPersist.Config.ignoreUrls = ['maps.googleapis']

@@ -1,6 +1,7 @@
 const gulp = require('gulp')
 const watch = require('gulp-watch')
 const webserver = require('gulp-webserver')
+const appConfig = require('./config').appConfig
 
 gulp.task('watch', () => {
 	watch('./app/**/*.html', () => gulp.start('app.html'))
@@ -13,9 +14,10 @@ gulp.task('watch', () => {
 })
 
 gulp.task('devServer', ['watch'], () => {
+	let appPort = appConfig.appHome.port
 	return gulp.src('public').pipe(webserver({
 		livereload: true,
-		port: 3004,
+		port: appPort,
 		open: true
 	}))
 })

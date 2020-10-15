@@ -2,7 +2,7 @@
     
     'use strict';
 
-    angular.module("ListaTelefonica").controller("PostItController", ['$rootScope', '$scope', '$window', PostItController])
+    angular.module("AppTemplate").controller("PostItController", ['$rootScope', '$scope', '$window', PostItController])
 
     function PostItController($rootScope, $scope, $window) { 
 

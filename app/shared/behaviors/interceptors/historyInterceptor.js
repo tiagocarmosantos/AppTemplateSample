@@ -3,7 +3,7 @@
 	'use strict';
 
 	// This interceptor it is used to by pass on browser's cache.
-	angular.module("ListaTelefonica").factory('historyInterceptor', ['$rootScope', '$window', '$location', historyInterceptor])
+	angular.module("AppTemplate").factory('historyInterceptor', ['$rootScope', '$window', '$location', historyInterceptor])
 
 	function historyInterceptor($rootScope, $window, $location) {
 		return {

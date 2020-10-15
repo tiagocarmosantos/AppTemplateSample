@@ -3,12 +3,12 @@
 	'use strict';
 	
 	// Factories are similars with Service and Providers.
-	angular.module("ListaTelefonica").factory("picMeAPI", ['config', picMeAPI])
+	angular.module("AppTemplate").factory("picMeAPI", ['$rootScope', picMeAPI])
 
-	function picMeAPI(config) {
+	function picMeAPI($rootScope) {
 
 		var _getPicsMe = (filter) => {
-			let url = (!!filter ? `${config.oapiUrl.getOApiUrl()}/picMe/?filter=${filter.param}:${filter.value}` : `${config.oapiUrl.getOApiUrl()}/picMe`)
+			let url = (!!filter ? `${$rootScope.config.oapiUrl.getOApiUrl()}/picMe/?filter=${filter.param}:${filter.value}` : `${config.oapiUrl.getOApiUrl()}/picMe`)
 			return fetch(url)
 			.then(response => { return response.json() })
 			.then(data => { return data })
@@ -16,14 +16,14 @@
 		}
 
 		var _getPicMe = id => {
-			return fetch(`${config.oapiUrl.getOApiUrl()}/picMe/${id}`)
+			return fetch(`${$rootScope.config.oapiUrl.getOApiUrl()}/picMe/${id}`)
 			.then(response => { return response.json() })
 			.then(data => { return data })
 			.catch(error => { throw Error(`Error: ${error.message}`) })
 		}
 
 		var _savePicMe = picMe => {
-			return fetch(`${config.oapiUrl.getOApiUrl()}/picMe`, {
+			return fetch(`${$rootScope.config.oapiUrl.getOApiUrl()}/picMe`, {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(picMe) 
@@ -34,7 +34,7 @@
 		}
 
 		var _deletePicMe = id => {
-			return fetch(`${config.oapiUrl.getOApiUrl()}/picMe/${id}`, { method: 'DELETE' })
+			return fetch(`${$rootScope.config.oapiUrl.getOApiUrl()}/picMe/${id}`, { method: 'DELETE' })
 			.then(response => { return response.json() })
 			.then(data => { return data })
 			.catch(error => { throw Error(`Error: ${error.message}`) })

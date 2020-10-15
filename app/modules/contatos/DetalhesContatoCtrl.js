@@ -2,7 +2,7 @@
 	
 	'use strict';
 
-	angular.module("ListaTelefonica").controller("DetalhesContatoController", ['$scope', '$routeParams', 'contatosAPI', DetalhesContatoController])
+	angular.module("AppTemplate").controller("DetalhesContatoController", ['$scope', '$routeParams', 'contatosAPI', DetalhesContatoController])
 
 	function DetalhesContatoController($scope, $routeParams, contatosAPI) { 
 

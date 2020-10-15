@@ -2,7 +2,7 @@
 	
 	'use strict';
 
-	angular.module('ListaTelefonica', ['ngRoute', 'ngSanitize', 'ngComponents']);
+	angular.module("AppTemplate", ["ngRoute", "ngSanitize", "ngComponents"]);
 
 	if ('serviceWorker' in navigator) {
 		navigator.serviceWorker

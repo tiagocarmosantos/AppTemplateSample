@@ -3,20 +3,20 @@
 	'use strict';
 	
 	// Factories are similars with Service and Providers.
-	angular.module("ListaTelefonica").factory("contatosAPI", ['$http', 'config', contatosAPI])
+	angular.module("AppTemplate").factory("contatosAPI", ['$http', '$rootScope', contatosAPI])
 
-	function contatosAPI($http, config) {
+	function contatosAPI($http, $rootScope) {
 
-		var _getContatos = function(scope) {
-			return $http.get(config.oapiUrl.getOApiUrl() + "/contatos").then(function (data) { 
+		var _getContatosInScope = function(scope) {
+			return $http.get($rootScope.config.oapiUrl.getOApiUrl() + "/contatos").then(function (data) { 
 				scope.contatos = JSON.parse(JSON.stringify(data.data));
 			}).catch(function (response) {
 				scope.error = "Aconteceu um problema: Não foi possível carregar os dados!";
 			});
 		};
 
-		var _getContatosInScope = function() {
-			return $http.get(config.oapiUrl.getOApiUrl() + "/contatos").then(function (data) { 
+		var _getContatos = function() {
+			return $http.get($rootScope.config.oapiUrl.getOApiUrl() + "/contatos").then(function (data) { 
 				return JSON.parse(JSON.stringify(data.data));
 			}).catch(function (response) {
 				return [];
@@ -24,7 +24,7 @@
 		};
 
 		var _getContato = function(id) {
-			return $http.get(config.oapiUrl.getOApiUrl() + "/contatos/" + id).then(function (data) { 
+			return $http.get($rootScope.config.oapiUrl.getOApiUrl() + "/contatos/" + id).then(function (data) { 
 				return JSON.parse(JSON.stringify(data.data));
 			}).catch(function (response) {
 				return "Aconteceu um problema: Não foi possível carregar os dados!";
@@ -32,7 +32,7 @@
 		};
 
 		var _saveContato = function(scope, contato) {
-			$http.post(config.oapiUrl.getOApiUrl() + "/contatos", contato).then(function (data) {
+			$http.post($rootScope.config.oapiUrl.getOApiUrl() + "/contatos", contato).then(function (data) {
 				delete scope.contato;
 				scope.contatoForm.$setPristine();
 				scope.contatos.push(JSON.parse(JSON.stringify(data.data)));
@@ -42,7 +42,7 @@
 		};
 
 		var _deleteContato = function(scope, contato) {
-			$http.delete(config.oapiUrl.getOApiUrl() + "/contatos/" + contato.id).then(function (data) {
+			$http.delete($rootScope.config.oapiUrl.getOApiUrl() + "/contatos/" + contato.id).then(function (data) {
 				scope.contatos.splice(scope.contatos.indexOf(contato), 1);
 			}).catch(function (response) {
 				scope.error = "Aconteceu um problema: Não foi possível deletar o contato!";

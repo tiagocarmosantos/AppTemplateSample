@@ -2,7 +2,7 @@
 	
 	'use strict';
 
-	angular.module("ListaTelefonica").config(['$httpProvider', interceptorConfig])
+	angular.module("AppTemplate").config(['$httpProvider', interceptorConfig])
 
 	function interceptorConfig($httpProvider) {
 		//console.log($httpProvider);

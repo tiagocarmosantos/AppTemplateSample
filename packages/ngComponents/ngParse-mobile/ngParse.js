@@ -3,8 +3,8 @@
 //   'use strict';
 
 // Extend JSON Stringfy JS Function
-// SAMPLE: JSON.stringify(obj, stringifyJsFunctions)
-function stringifyJsFunctions(key, value) {
+// SAMPLE: JSON.stringify(obj, stringifyJsFunction)
+function stringifyJsFunction(key, value) {
     if (typeof value === "function") {
         let valueString = value.toString()
         let body = valueString.slice(valueString.indexOf("{") + 1, valueString.lastIndexOf("}")).replace(/\\n/gi, '')
@@ -15,8 +15,8 @@ function stringifyJsFunctions(key, value) {
 }
 
 // Extend JSON Parse JS Function
-// SAMPLE: JSON.parse(obj, parseJsFunctions)
-function parseJsFunctions(key, value) {
+// SAMPLE: JSON.parse(obj, parseJsFunction)
+function parseJsFunction(key, value) {
     if (!!value && value.toString().includes('function')) {
         let dataFunction = JSON.parse(value).function
         let body = dataFunction.body
@@ -28,13 +28,14 @@ function parseJsFunctions(key, value) {
 
 // Convert JSON Object TO JSON String
 // Include atributtes with JS Functions
-function jsonStringify(obj) {
-    return JSON.stringify(obj, stringifyJsFunctions)
+function stringifyJSON(obj) {
+    return JSON.stringify(obj, stringifyJsFunction)
 }
 
 // Convert JSON String TO JSON Object
-function jsonParse(obj) {
-    return JSON.parse(obj, parseJsFunctions)
+// Retrieve atributtes with JS Functions
+function parseJSON(obj) {
+    return JSON.parse(obj, parseJsFunction)
 }
 
 // })();

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="ListaTelefonica" lang="en" manifest="offline.appcache">
+<html ng-app="AppTemplate" lang="en" manifest="offline.appcache">
 <head>
 	<base href="/">
 	<meta charset="utf-8" />
@@ -27,13 +27,14 @@
 	<meta name="msapplication-TileColor" content="#31af6e">
 
 	<meta name="google-signin-client_id" content="324031918063-ubeq5fdudk5ibcplhi6phkvdglf794uk.apps.googleusercontent.com">
+
+	<script src="/shared/behaviors/deps.min.js"></script>
+	<script src="/shared/behaviors/app.min.js"></script>
 </head>
 <body data-role="content">
 <!-- <ng-include include-replace src="'templates/' + config.template.templateName + '/index.html'"></ng-include> -->
 <div include-replace ng-include="'templates/' + config.template.templateName + '/index.html'"></div>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFmELIQCXN_IWpjlJoq5l5OpITt1OrMx8"></script>
-<script src="/shared/behaviors/deps.min.js"></script>
-<script src="/shared/behaviors/app.min.js"></script>
 </body>
 </html>

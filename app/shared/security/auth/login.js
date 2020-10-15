@@ -2,7 +2,7 @@
     
     'use strict';
 
-    angular.module("ListaTelefonica").controller("loginController", ['$rootScope', '$scope', '$window', loginController])
+    angular.module("AppTemplate").controller("loginController", ['$rootScope', '$scope', '$window', loginController])
 
     function loginController($rootScope, $scope, $window) { 
 

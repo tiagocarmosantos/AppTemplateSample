@@ -2,7 +2,7 @@
     
     'use strict';
 
-    angular.module("ListaTelefonica").controller("NgMapController", ['$rootScope', '$scope', '$window', '$element', NgMap])
+    angular.module("AppTemplate").controller("NgMapController", ['$rootScope', '$scope', '$window', '$element', NgMap])
 
     function NgMap($rootScope, $scope, $window, $element) { 
 

@@ -2,7 +2,7 @@
 	
 	'use strict';
 
-	angular.module("ListaTelefonica").controller("NovoContatoController", ['$scope', 'contatosAPI', 'serialGenerator', '$location', 'operadorasAPI', NovoContatoController])
+	angular.module("AppTemplate").controller("NovoContatoController", ['$scope', 'contatosAPI', 'serialGenerator', '$location', 'operadorasAPI', NovoContatoController])
 
 	function NovoContatoController($scope, contatosAPI, serialGenerator, $location, operadorasAPI) { 
 
