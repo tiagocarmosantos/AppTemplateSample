@@ -5,7 +5,7 @@
   "appModules": [],
   "template": {"templateName":"template-01","showHeader":true,"showFooter":true},
   "templates":[{"templateName":"template-01","showHeader":true,"showFooter":true},{"templateName":"template-02","showHeader":true,"showFooter":true},{"templateName":"template-03","showHeader":true,"showFooter":true}],
-  "defaultRoute":"/contatos/contatos",
+  "defaultRoute":"/picMe/picMe",
   "previousRoute":"",
   "version":"1.0",
   "owner":"Tiago Carmo Santos",

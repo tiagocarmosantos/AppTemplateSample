@@ -42,7 +42,7 @@
 		};
 
 		var _deleteContato = function(scope, contato) {
-			$http.delete($rootScope.config.oapiUrl.getOApiUrl() + "/contatos/" + contato.id).then(function (data) {
+			$http.delete($rootScope.config.oapiUrl.getOApiUrl() + `/contatos/${contato._id}`).then(function (data) {
 				scope.contatos.splice(scope.contatos.indexOf(contato), 1);
 			}).catch(function (response) {
 				scope.error = "Aconteceu um problema: Não foi possível deletar o contato!";

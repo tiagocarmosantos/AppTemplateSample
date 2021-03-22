@@ -10,6 +10,7 @@
 
         function onSignIn (googleUser) {
             console.log('User signed in.');
+            //debugger
 
             var profile = googleUser.getBasicProfile()
             vm.User.ID = profile.getId()
@@ -48,23 +49,29 @@
             console.log('Login')
             $rootScope.config.template.showFooter = false
             $rootScope.config.template.showHeader = false
-
             document.User = initUser()
-
-            gapi.signin2.render('googleBtn', { onsuccess: vm.User.onSignIn, onfailure: vm.User.onSignOut });
-        })();
+        })()
 
         // Clean up stuff
         $scope.$on('$destroy', () => {
             //  TODO SOMETHING
             $rootScope.config.template.showFooter = true
             $rootScope.config.template.showHeader = true
-        });
+        })
 
         // Here your view content is fully loaded !!
         $scope.$on('$viewContentLoaded', () => {
             //  TODO SOMETHING
-        });
+        })
+
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("DOM completamente carregado e analisado!")
+        })
+
+        angular.element(() => {
+            console.log('Page Loading Completed!');
+            gapi.signin2.render('googleBtn', { onsuccess: vm.User.onSignIn, onfailure: vm.User.onSignOut });
+        })
     }
 
 })()
