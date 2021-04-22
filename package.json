@@ -29,7 +29,7 @@
     "angular-route": "1.6.1",
     "angular-sanitize": "1.6.1",
     "angular-toastr": "2.1.1",
-    "bootstrap": "3.3.7",
+    "bootstrap": "3.4.1",
     "client-compress": "^2.1.2",
     "compress.js": "^1.1.2",
     "font-awesome": "^4.7.0",
