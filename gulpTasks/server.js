@@ -18,6 +18,7 @@ gulp.task('devServer', ['watch'], () => {
 	return gulp.src('public').pipe(webserver({
 		livereload: true,
 		port: appPort,
+		host: '0.0.0.0',
 		open: true
 	}))
 })
@@ -37,6 +38,7 @@ gulp.task('modulesServer', ['watch'], () => {
 			path: 'public/modules/'
 		},
 		port: 3005,
+		host: '0.0.0.0',
 		open: false
 	}))
 })

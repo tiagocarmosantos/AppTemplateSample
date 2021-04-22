@@ -1,7 +1,7 @@
+.memeMaker{height:100vh;overflow:scroll !important}
 .listContacts{height:100vh;overflow:scroll !important;display:flex;flex-direction:column}
 .detailsContact{height:100vh;overflow:scroll !important;display:flex;flex-direction:column}
 .newContact{height:100vh;overflow:scroll !important;display:flex;flex-direction:column}
-.memeMaker{height:100vh;overflow:scroll !important}
 .ngMap{height:90vh;max-width:none}
 .ngProgressive{height:100vh;overflow:scroll !important}
 .newPicListActionsTop{display:flex;flex-direction:row;justify-content:space-between;padding:2%}.listFilters{display:grid;justify-items:center;overflow-x:auto;overflow-y:hidden;scroll-behavior:smooth;transition:visibility 0s,opacity .5s linear}.picmeHidden{visibility:hidden;opacity:0}.listFilters ul{display:flex;flex-direction:row}.newPicListActionsBottom{display:flex;flex-direction:row;justify-content:space-between;padding:2%}

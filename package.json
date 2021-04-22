@@ -8,11 +8,11 @@
     "npm": "4.6.1"
   },
   "scripts": {
-    "build": "gulp --build",
+    "build": "node_modules/.bin/gulp --build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "CI": "git add . && git commit -m \"Automatic Commit\" && git push origin master",
     "CD": "git push heroku master",
-    "dev": "gulp --dev",
+    "dev": "node_modules/.bin/gulp --dev",
     "production": "npm run build && npm run CI"
   },
   "keywords": [],

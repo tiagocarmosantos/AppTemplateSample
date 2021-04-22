@@ -1,7 +1,7 @@
 {
   "appName":"AppTemplate",
   "appInitials":"AppTemp",
-  "appHome": { "url":"", "port":"3004", "getAppHome":"{\"function\":{\"arguments\":\"\",\"body\":\" return window.location.origin \"}}" },
+  "appHome": { "url":"", "port":"80", "getAppHome":"{\"function\":{\"arguments\":\"\",\"body\":\" return window.location.origin \"}}" },
   "appModules": [],
   "template": {"templateName":"template-01","showHeader":true,"showFooter":true},
   "templates":[{"templateName":"template-01","showHeader":true,"showFooter":true},{"templateName":"template-02","showHeader":true,"showFooter":true},{"templateName":"template-03","showHeader":true,"showFooter":true}],
