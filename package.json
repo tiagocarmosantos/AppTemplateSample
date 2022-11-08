@@ -50,7 +50,7 @@
     "babel-core": "6.26.0",
     "babel-preset-env": "1.6.0",
     "graceful-fs": "^4.2.4",
-    "gulp": "3.9.1",
+    "gulp": "4.0.2",
     "gulp-babel": "7.0.0",
     "gulp-concat": "2.6.1",
     "gulp-htmlmin": "3.0.0",
